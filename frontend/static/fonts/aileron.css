@@ -1,0 +1,127 @@
+@font-face {
+    font-family: "Aileron";
+    font-display: swap;
+    font-style: normal;
+    font-weight: 100;
+    src: local('aileron ultralight'), local('aileron-ultralight'), local('Aileron UltraLight'), local('Aileron-UltraLight'), url("./Aileron/Aileron-UltraLight.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Aileron";
+    font-display: swap;
+    font-style: italic;
+    font-weight: 100;
+    src: local('aileron ultralightitalic'), local('aileron-ultralightitalic'), local('Aileron UltraLightItalic'), local('Aileron-UltraLightItalic'), url("./Aileron/Aileron-UltraLightItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Aileron";
+    font-display: swap;
+    font-style: normal;
+    font-weight: 200;
+    src: local('aileron thin'), local('aileron-thin'), local('Aileron Thin'), local('Aileron-Thin'), url("./Aileron/Aileron-Thin.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Aileron";
+    font-display: swap;
+    font-style: italic;
+    font-weight: 200;
+    src: local('aileron thinitalic'), local('aileron-thinitalic'), local('Aileron ThinItalic'), local('Aileron-ThinItalic'), url("./Aileron/Aileron-ThinItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Aileron";
+    font-display: swap;
+    font-style: normal;
+    font-weight: 300;
+    src: local('aileron light'), local('aileron-light'), local('Aileron Light'), local('Aileron-Light'), url("./Aileron/Aileron-Light.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Aileron";
+    font-display: swap;
+    font-style: italic;
+    font-weight: 300;
+    src: local('aileron lightitalic'), local('aileron-lightitalic'), local('Aileron LightItalic'), local('Aileron-LightItalic'), url("./Aileron/Aileron-LightItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Aileron";
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
+    src: local('aileron regular'), local('aileron-regular'), local('Aileron Regular'), local('Aileron-Regular'), url("./Aileron/Aileron-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Aileron";
+    font-display: swap;
+    font-style: italic;
+    font-weight: 400;
+    src: local('aileron italic'), local('aileron-italic'), local('Aileron Italic'), local('Aileron-Italic'), url("./Aileron/Aileron-Italic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Aileron";
+    font-display: swap;
+    font-style: normal;
+    font-weight: 500;
+    src: local('aileron semibold'), local('aileron-semibold'), local('Aileron SemiBold'), local('Aileron-SemiBold'), url("./Aileron/Aileron-SemiBold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Aileron";
+    font-display: swap;
+    font-style: italic;
+    font-weight: 500;
+    src: local('aileron semibolditalic'), local('aileron-semibolditalic'), local('Aileron SemiBoldItalic'), local('Aileron-SemiBoldItalic'), url("./Aileron/Aileron-SemiBoldItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Aileron";
+    font-display: swap;
+    font-style: normal;
+    font-weight: 600;
+    src: local('aileron bold'), local('aileron-bold'), local('Aileron Bold'), local('Aileron-Bold'), url("./Aileron/Aileron-Bold.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Aileron";
+    font-display: swap;
+    font-style: italic;
+    font-weight: 600;
+    src: local('aileron bolditalic'), local('aileron-bolditalic'), local('Aileron BoldItalic'), local('Aileron-BoldItalic'), url("./Aileron/Aileron-BoldItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Aileron";
+    font-display: swap;
+    font-style: normal;
+    font-weight: 700;
+    src: local('aileron heavy'), local('aileron-heavy'), local('Aileron Heavy'), local('Aileron-Heavy'), url("./Aileron/Aileron-Heavy.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Aileron";
+    font-display: swap;
+    font-style: italic;
+    font-weight: 700;
+    src: local('aileron heavyitalic'), local('aileron-heavyitalic'), local('Aileron HeavyItalic'), local('Aileron-HeavyItalic'), url("./Aileron/Aileron-HeavyItalic.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Aileron";
+    font-display: swap;
+    font-style: normal;
+    font-weight: 800;
+    src: local('aileron black'), local('aileron-black'), local('Aileron Black'), local('Aileron-Black'), url("./Aileron/Aileron-Black.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Aileron";
+    font-display: swap;
+    font-style: italic;
+    font-weight: 800;
+    src: local('aileron blackitalic'), local('aileron-blackitalic'), local('Aileron BlackItalic'), local('Aileron-BlackItalic'), url("./Aileron/Aileron-BlackItalic.otf") format("opentype");
+}
