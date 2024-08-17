@@ -96,7 +96,6 @@
 			<ul>
 				<li class="nav-current"><a href="#about">About</a></li>
 				<li><a href="#experience">Experience</a></li>
-				<li><a href="#Principles">Principles</a></li>
 				<li><a href="#labs">Labs</a></li>
 				<li><a href="#contact">Contact</a></li>
 			</ul>
@@ -232,15 +231,6 @@
 			<div>
 				<a href="/resume.pdf" target="_blank">View complete resume <span>&xrarr;</span></a>
 			</div>
-		</section>
-		<section id="principles">
-			<hgroup>
-				<h2 class="sr-only">Principles</h2>
-				<p>
-					I approach all work with principles in mind. However, these are not static. They change and
-					adapt with new perspectives and experiences.
-				</p>
-			</hgroup>
 		</section>
 		<section id="labs">
 			<hgroup>
