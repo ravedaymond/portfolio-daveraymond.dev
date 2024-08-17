@@ -275,7 +275,7 @@
 		<section id="contact">
 			<hgroup>
 				<h2 class="sr-only">Contact</h2>
-				<p>Building cool things is more fun together. Let's get in touch!</p>
+				<p>Building cool things is <em>way</em> more fun together.</p>
 			</hgroup>
 			<form id="contact-form">
 				<label class="sr-only" for="contact-name">Name</label>
@@ -671,22 +671,21 @@
 	nav ul {
 		display: flex;
 		flex-direction: column;
-	}
-
-	nav li {
-		display: inline-block;
-		font-size: 1.2em;
-		font-weight: 300;
+		align-items: flex-end;
+		margin: 0;
+		padding: 0;
+		font-size: 1.5em;
+		font-weight: 200;
 		list-style: none;
 	}
 
-	nav li::before {
+	nav li::after {
 		content: '';
 		display: inline-block;
 		vertical-align: middle;
 		height: 0px;
 		width: 16px;
-		margin-right: 8px;
+		margin: 0 8px;
 		border-bottom: 1px solid var(--nav-indicator-inactive);
 		transition-duration: 0.3s;
 	}
@@ -695,7 +694,7 @@
 		color: var(--nav-text-hover);
 	}
 
-	nav li:hover::before {
+	nav li:hover::after {
 		width: 32px;
 		border-color: var(--nav-indicator-hover);
 	}
@@ -704,7 +703,7 @@
 		color: var(--nav-text-active);
 	}
 
-	nav li.nav-current::before {
+	nav li.nav-current::after {
 		width: 32px;
 		border-color: var(--nav-indicator-active);
 	}
@@ -906,6 +905,7 @@
 		margin: 8px 16px;
 		padding: 12px 16px;
 		color: var(--text-primary);
+		box-shadow: 0 1px 4px var(--portrait-frame-shadow);
 		background-color: var(--exp-details-background);
 		border: 1px solid var(--exp-details-border);
 		border-radius: 4px;
@@ -913,7 +913,7 @@
 
 	#contact-form input:focus, #contact-form textarea:focus {
 		outline: 1px solid var(--header-heading);
-		
+		box-shadow: 0 2px 4px var(--portrait-frame-shadow);
 	}
 
 	#contact-form input::placeholder,
@@ -932,32 +932,11 @@
 	#contact-form input[type="submit"] {
 		align-self: center;
 		width: 25%;
-		/* border: 1px solid transparent; */
 		cursor: pointer;
-		box-shadow: 0 1px 4px var(--portrait-frame-shadow);
-		background:
-			linear-gradient(var(--prop-exp-details-bg-color), var(--prop-exp-details-bg-color))
-				padding-box,
-			linear-gradient(
-					30deg,
-					var(--prop-exp-details-border-color-1),
-					var(--prop-exp-details-border-color-2)
-				)
-				border-box;
-		--t: 0.6s;
-		transition:
-			box-shadow var(--t),
-			--prop-exp-details-bg-color var(--t),
-			--prop-exp-details-border-color-1 var(--t),
-			--prop-exp-details-border-color-2 var(--t);
 	}
 
 	#contact-form input[type="submit"]:hover {
-		border: 1px solid transparent;
-		box-shadow: 0 2px 4px var(--portrait-frame-shadow);
-		--prop-exp-details-bg-color: var(--mouse-gradient);
-		--prop-exp-details-border-color-1: var(--main-section-border);
-		--prop-exp-details-border-color-2: var(--header-heading);
+		outline: 1px solid var(--header-heading);
 	}
 
 	footer {
