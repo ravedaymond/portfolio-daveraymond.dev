@@ -58,7 +58,7 @@
 				<fieldset>
 					<legend class="sr-only">Select a portrait:</legend>
 					<label class="sr-only" for="show-portrait-a">Portrait A</label>
-					<input type="radio" name="show-portrait" id="show-portrait-a" value="a" />
+					<input type="radio" name="show-portrait" id="show-portrait-a" value="a" checked />
 					<label class="sr-only" for="show-portrait-b">Portrait B</label>
 					<input type="radio" name="show-portrait" id="show-portrait-b" value="b" />
 					<label class="sr-only" for="show-portrait-c">Portrait C</label>
@@ -471,19 +471,38 @@
 	.portrait > figcaption > span {
 		font-style: normal;
 	}
+	
+	
+	@property --prop-portrait-frame-color-1 {
+		syntax: "<color>";
+		initial-value: transparent;
+		inherits: false;
+	}
+
+	@property --prop-portrait-frame-color-2 {
+		syntax: "<color>";
+		initial-value: transparent;
+		inherits: false;
+	}
 
 	.portrait-frame {
 		position: absolute;
 		width: var(--portrait-frame-w);
 		height: var(--portrait-frame-h);
-
-		border: 1px solid var(--portrait-frame);
+		border: 1px solid transparent;
 		border-radius: 4px;
 		box-shadow: 1px 1px 4px var(--portrait-frame-shadow);
-
 		transform: rotate(var(--portrait-frame-rot));
 		overflow: hidden;
-		transition-duration: 0.3s;
+		background: linear-gradient(30deg, var(--prop-portrait-frame-color-1), var(--prop-portrait-frame-color-2)) border-box;
+		--t: 0.6s;
+		transition: --prop-portrait-frame-color-1 var(--t), --prop-portrait-frame-color-2 var(--t);
+	}
+
+	.portrait-frame:hover {
+		cursor: pointer;
+		--prop-portrait-frame-color-1: var(--main-section-border);
+		--prop-portrait-frame-color-2: var(--nav-indicator-hover);
 	}
 
 	/* Expand frames on hover */
@@ -491,11 +510,11 @@
 		Requires JS to manage other frames simultaneously for proper layering,
 		as well as tying to the respective figcaptions.
 	*/
-	.portrait-frame:hover {
+	/* .portrait-frame:hover {
 		cursor: pointer;
 		border-color: var(--portrait-frame-hover);
 		z-index: 4 !important;
-	}
+	} */
 
 	/* Position frames for preview */
 	header > div > .portrait:nth-child(1) .portrait-frame {
