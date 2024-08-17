@@ -12,13 +12,14 @@
 		mgradient.x = event.pageX - window.scrollX;
 		mgradient.y = event.pageY - window.scrollY;
 	}
-
-
 </script>
 
 <svelte:window on:mousemove={mousegradientmove} />
 <div class="page-wrapper">
-	<span id="mouse-gradient" style="translate: calc(-50% + {mgradient.x}px) calc(-50% + {mgradient.y}px);"></span>
+	<span
+		id="mouse-gradient"
+		style="translate: calc(-50% + {mgradient.x}px) calc(-50% + {mgradient.y}px);"
+	></span>
 	<div class="header-nav-wrapper">
 		<header>
 			<hgroup>
@@ -67,9 +68,19 @@
 			</div>
 			<ul>
 				<li>
-					<a href="https://linkedin.com/in/dave-raymond" target="_blank"  rel="external noopener noreferrer" aria-label="LinkedIn">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-							<path 
+					<a
+						href="https://linkedin.com/in/dave-raymond"
+						target="_blank"
+						rel="external noopener noreferrer"
+						aria-label="LinkedIn"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							fill="currentColor"
+							aria-hidden="true"
+						>
+							<path
 								fill-rule="evenodd"
 								clip-rule="evenodd"
 								d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
@@ -79,7 +90,12 @@
 					</a>
 				</li>
 				<li>
-					<a href="https://github.com/ravedaymond" target="_blank" rel="external noopener noreferrer" aria-label="GitHub">
+					<a
+						href="https://github.com/ravedaymond"
+						target="_blank"
+						rel="external noopener noreferrer"
+						aria-label="GitHub"
+					>
 						<svg xmlns="http://www.w3.org/2000/svg" width="98" viewBox="0 0 98 96" height="96">
 							<path
 								fill-rule="evenodd"
@@ -105,11 +121,11 @@
 		<section id="about">
 			<h2 class="sr-only">About</h2>
 			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin posuere auctor pretium. 
-				Aenean varius id ex non scelerisque. Donec tempor lacus at eros ullamcorper lacinia. 
-				Donec fermentum eget est in sollicitudin. Sed pretium venenatis orci, eget ornare ex 
-				pretium vitae. Sed venenatis dignissim nunc, placerat venenatis neque ultricies quis. 
-				Donec non dolor eu tortor tempus hendrerit.
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin posuere auctor pretium.
+				Aenean varius id ex non scelerisque. Donec tempor lacus at eros ullamcorper lacinia. Donec
+				fermentum eget est in sollicitudin. Sed pretium venenatis orci, eget ornare ex pretium
+				vitae. Sed venenatis dignissim nunc, placerat venenatis neque ultricies quis. Donec non
+				dolor eu tortor tempus hendrerit.
 			</p>
 			<p>
 				I'm fortunate enough to have grown up alongside technology. I recall not having internet in
@@ -125,17 +141,20 @@
 				Technology has allowed us to visit and populate a vast digital frontier. We've learned to
 				navigate freeways of light through mouse and keyboard, engaging in the largest celebration
 				of creativity, innovation, and human connection that has ever existed. An ever-expanding and
-				evolving "
-				<a href="/declaration_of_the_independence_of_cyberspace.pdf" target="_blank" style="text-decoration: none; color: inherit;">
-					civilization of the Mind
-				</a>"...
+				evolving "<a href="/declaration_of_the_independence_of_cyberspace.pdf" target="_blank"
+					>civilization of the Mind</a
+				>"...
 			</p>
 			<p>And I am <em>enthralled</em> at the future that lies ahead.</p>
 		</section>
 		<section id="experience">
 			<h2 class="sr-only">Experience</h2>
 			<time datetime="2024-07">Jul 2024</time>
-			<a href="https://www.fidelity.com/" target="_blank" rel="external noopener noreferrer nofollow">
+			<a
+				href="https://www.fidelity.com/"
+				target="_blank"
+				rel="external noopener noreferrer nofollow"
+			>
 				<section class="exp-details">
 					<hgroup>
 						<h3>Full Stack Engineer</h3>
@@ -165,36 +184,44 @@
 				</section>
 			</a>
 			<time datetime="2022-06">Jun 2022</time>
-			<a href="https://www.fidelity.com/" target="_blank" rel="external noopener noreferrer nofollow">
+			<a
+				href="https://www.fidelity.com/"
+				target="_blank"
+				rel="external noopener noreferrer nofollow"
+			>
 				<section class="exp-details">
 					<hgroup>
 						<h3>Software Engineer</h3>
 						<p>
-							<span class="sr-only">at</span>Fidelity Investments<span>&nbsp;&nearr;</span>								
+							<span class="sr-only">at</span>Fidelity Investments<span>&nbsp;&nearr;</span>
 						</p>
 					</hgroup>
 					<ul>
 						<li>
-							Developed scalable multi-threaded batch application to liquidate expiring options using
-							Java and Spring Boot.
+							Developed scalable multi-threaded batch application to liquidate expiring options
+							using Java and Spring Boot.
 						</li>
 						<li>
-							Designed and developed aggregate rule engine to enable dynamic control over current and
-							future batch applications.
+							Designed and developed aggregate rule engine to enable dynamic control over current
+							and future batch applications.
 						</li>
 						<li>
 							Created shared Java libraries to standardize Oracle database integration across
 							applications.
 						</li>
 						<li>
-							Lead on Oracle modernization effort across Risk Management to standardize Oracle PL/SQL
-							procedures.
+							Lead on Oracle modernization effort across Risk Management to standardize Oracle
+							PL/SQL procedures.
 						</li>
 					</ul>
-				</section>			
+				</section>
 			</a>
 			<time datetime="2019-05">May 2019</time>
-			<a href="https://jobs.fidelity.com/students/leap-program/" target="_blank" rel="external noreferrer noopener nofollow">
+			<a
+				href="https://jobs.fidelity.com/students/leap-program/"
+				target="_blank"
+				rel="external noreferrer noopener nofollow"
+			>
 				<section class="exp-details">
 					<hgroup>
 						<h3>LEAP Associate Software Engineer</h3>
@@ -209,15 +236,19 @@
 						</li>
 						<li>Developed back-end web APIs using Node.js and Spring Boot.</li>
 						<li>
-							Worked with relational and non-relational database solutions such as Oracle, MySQL, and
-							MongoDB.
+							Worked with relational and non-relational database solutions such as Oracle, MySQL,
+							and MongoDB.
 						</li>
 					</ul>
 				</section>
 			</a>
 			<time datetime="2019-01">Jan 2019</time>
 			<time datetime="2018-12">Dec 2018</time>
-			<a href="https://www.plymouth.edu/" target="_blank" rel="external noreferrer noopener nofollow">
+			<a
+				href="https://www.plymouth.edu/"
+				target="_blank"
+				rel="external noreferrer noopener nofollow"
+			>
 				<section class="exp-details">
 					<hgroup>
 						<h3>Bachelor of Science, Information Technology</h3>
@@ -258,16 +289,18 @@
 		</section>
 	</main>
 	<footer>
-		<a href="https://github.com/ravedaymond" target="_blank" rel="external noopener noreferrer" aria-label="GitHub">
-			Designed &amp; developed by {copyName} &copy; {copyDate}
-		</a>
+		<a
+			href="https://github.com/ravedaymond"
+			target="_blank"
+			rel="external noopener noreferrer"
+			aria-label="GitHub">Designed &amp; developed by {copyName} &copy; {copyDate}</a
+		>
 	</footer>
 </div>
 
 <style>
-
 	:root {
-		/* Color variables */		
+		/* Color variables */
 		--c1-primary-pine-green: #2d5d5a; /* light text */
 		--c1-primary-pine-green-dark: #122524;
 		--c1-secondaryA1-cloud-nine: #eeefe5;
@@ -292,7 +325,6 @@
 		--c2-shade4-atmospheric: #889d9a;
 		--c2-shade5-dartsmouth-green: #748e88;
 		--c2-shade6-verdigris: #55756c; /* light text */
-
 
 		/* Element color variables */
 		--text-primary: var(--c1-secondaryB1-sebring-white);
@@ -323,13 +355,21 @@
 
 		--main-section-border: var(--c1-shade6-yukon-green);
 		--main-section-view-more: var(--c1-shade4-majestic-blue);
-		--main-section-view-more-hover: var();
+		--main-section-view-more-hover: var(--c1-shade3-tranquil-blue);
 
 		--exp-details-header-role: var(--c1-secondaryA1-cloud-nine);
 		--exp-details-header-at: var(--c1-secondaryA2-silken-pine);
 		--exp-details-list-style-color: var(--c2-secondaryB1-pale-celery);
-		--exp-details-background: color-mix(in srgb, var(--c1-secondaryA1-cloud-nine) 10%, rgba(0, 0, 0, 0) 100%);
-		--exp-details-background-hover: color-mix(in srgb, var(--c1-secondaryA1-cloud-nine) 100%, rgba(0, 0, 0, 0) 100%);
+		--exp-details-background: color-mix(
+			in srgb,
+			var(--c1-secondaryA1-cloud-nine) 10%,
+			rgba(0, 0, 0, 0) 100%
+		);
+		--exp-details-background-hover: color-mix(
+			in srgb,
+			var(--c1-secondaryA1-cloud-nine) 100%,
+			rgba(0, 0, 0, 0) 100%
+		);
 		--exp-details-border: var(--c1-shade6-yukon-green);
 		--exp-details-border-hover: var();
 		--exp-details-shadow: rgba(0, 0, 0, 0.4);
@@ -337,6 +377,11 @@
 
 		--footer-text: var(--c1-shade4-majestic-blue);
 		--footer-text-hover: var(--c1-shade3-tranquil-blue);
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
 	}
 
 	::selection {
@@ -369,13 +414,17 @@
 		border-radius: 50%;
 		width: var(--size);
 		height: var(--size);
-		background: radial-gradient(circle, var(--mouse-gradient) 0%, var(--page-wrapper-background) 60%);
+		background: radial-gradient(
+			circle,
+			var(--mouse-gradient) 0%,
+			var(--page-wrapper-background) 60%
+		);
 		pointer-events: none;
 		z-index: -1;
 	}
 
 	#mouse-gradient::after {
-		content: "";
+		content: '';
 		width: 16px;
 		height: 16px;
 		border: 1px solid black;
@@ -404,7 +453,7 @@
 		display: grid;
 		grid-template-columns: 200px 200px;
 		grid-template-rows: auto 1fr;
-		grid-template-areas: 
+		grid-template-areas:
 			'h h'
 			'. n';
 	}
@@ -465,16 +514,15 @@
 	.portrait > figcaption > span {
 		font-style: normal;
 	}
-	
-	
+
 	@property --prop-portrait-frame-color-1 {
-		syntax: "<color>";
+		syntax: '<color>';
 		initial-value: transparent;
 		inherits: false;
 	}
 
 	@property --prop-portrait-frame-color-2 {
-		syntax: "<color>";
+		syntax: '<color>';
 		initial-value: transparent;
 		inherits: false;
 	}
@@ -488,27 +536,23 @@
 		box-shadow: 1px 1px 4px var(--portrait-frame-shadow);
 		transform: rotate(var(--portrait-frame-rot));
 		overflow: hidden;
-		background: linear-gradient(30deg, var(--prop-portrait-frame-color-1), var(--prop-portrait-frame-color-2)) border-box;
+		background: linear-gradient(
+				30deg,
+				var(--prop-portrait-frame-color-1),
+				var(--prop-portrait-frame-color-2)
+			)
+			border-box;
 		--t: 0.6s;
-		transition: --prop-portrait-frame-color-1 var(--t), --prop-portrait-frame-color-2 var(--t);
+		transition:
+			--prop-portrait-frame-color-1 var(--t),
+			--prop-portrait-frame-color-2 var(--t);
 	}
 
 	.portrait-frame:hover {
 		cursor: pointer;
 		--prop-portrait-frame-color-1: var(--main-section-border);
-		--prop-portrait-frame-color-2: var(--nav-indicator-hover);
+		--prop-portrait-frame-color-2: var(--header-heading);
 	}
-
-	/* Expand frames on hover */
-	/* 
-		Requires JS to manage other frames simultaneously for proper layering,
-		as well as tying to the respective figcaptions.
-	*/
-	/* .portrait-frame:hover {
-		cursor: pointer;
-		border-color: var(--portrait-frame-hover);
-		z-index: 4 !important;
-	} */
 
 	/* Position frames for preview */
 	header > div > .portrait:nth-child(1) .portrait-frame {
@@ -634,7 +678,7 @@
 	}
 
 	nav > ul > li::before {
-		content: "";
+		content: '';
 		display: inline-block;
 		vertical-align: middle;
 		height: 0px;
@@ -653,10 +697,6 @@
 		border-color: var(--nav-indicator-hover);
 	}
 
-	/* nav > ul > li.nav-current {
-		pointer-events: none;
-	} */
-
 	nav > ul > li.nav-current {
 		color: var(--nav-text-active);
 	}
@@ -664,11 +704,6 @@
 	nav > ul > li.nav-current::before {
 		width: 32px;
 		border-color: var(--nav-indicator-active);
-	}
-
-	nav > ul > li > a {
-		color: inherit;
-		text-decoration: none;
 	}
 
 	/* Main Content */
@@ -685,20 +720,19 @@
 	}
 
 	main > section::before {
-		content: "";
+		content: '';
 		position: absolute;
 		display: flex;
 		bottom: 0;
 		left: -1px;
 		height: calc(100% - var(--content-padding));
-		border: 1px solid  var(--main-section-border);
+		border: 1px solid var(--main-section-border);
 		border-radius: 4px;
 	}
 
 	main > section > div:last-of-type {
 		align-self: flex-end;
 	}
-	
 
 	main > section > div:last-of-type > a {
 		position: relative;
@@ -730,7 +764,7 @@
 	}
 
 	#experience > time::before {
-		content: "";
+		content: '';
 		display: inline-block;
 		height: 4px;
 		width: 4px;
@@ -740,7 +774,7 @@
 	}
 
 	#experience > time::after {
-		content: "";
+		content: '';
 		left: 0;
 		margin-left: 8px;
 		flex-grow: 1;
@@ -748,24 +782,20 @@
 		border: 1px solid var(--main-section-border);
 	}
 
-	#experience > a {
-		text-decoration: none;
-	}
-
 	@property --prop-exp-details-bg-color {
-		syntax: "<color>";
+		syntax: '<color>';
 		initial-value: transparent;
 		inherits: false;
 	}
-	
+
 	@property --prop-exp-details-border-color-1 {
-		syntax: "<color>";
+		syntax: '<color>';
 		initial-value: transparent;
 		inherits: false;
 	}
 
 	@property --prop-exp-details-border-color-2 {
-		syntax: "<color>";
+		syntax: '<color>';
 		initial-value: transparent;
 		inherits: false;
 	}
@@ -775,18 +805,26 @@
 		padding: 8px 16px;
 		border: 1px solid transparent;
 		border-radius: 4px;
-		background: linear-gradient(var(--prop-exp-details-bg-color), var(--prop-exp-details-bg-color)) padding-box,
-					linear-gradient(30deg, var(--prop-exp-details-border-color-1), var(--prop-exp-details-border-color-2)) border-box;
+		background:
+			linear-gradient(var(--prop-exp-details-bg-color), var(--prop-exp-details-bg-color))
+				padding-box,
+			linear-gradient(
+					30deg,
+					var(--prop-exp-details-border-color-1),
+					var(--prop-exp-details-border-color-2)
+				)
+				border-box;
 		--t: 0.6s;
-		transition: --prop-exp-details-bg-color var(--t), 
-					--prop-exp-details-border-color-1 var(--t), 
-					--prop-exp-details-border-color-2 var(--t);
+		transition:
+			--prop-exp-details-bg-color var(--t),
+			--prop-exp-details-border-color-1 var(--t),
+			--prop-exp-details-border-color-2 var(--t);
 	}
 
 	.exp-details:hover {
 		--prop-exp-details-bg-color: var(--mouse-gradient);
 		--prop-exp-details-border-color-1: var(--main-section-border);
-		--prop-exp-details-border-color-2: var(--nav-indicator-hover);
+		--prop-exp-details-border-color-2: var(--header-heading);
 	}
 
 	.exp-details > hgroup {
@@ -799,7 +837,7 @@
 	.exp-details > hgroup > h3 {
 		flex-basis: 65%;
 		justify-self: flex-start;
-		font-size: 16px;
+		font-size: 18px;
 		font-weight: 600;
 		color: var(--exp-details-header-role);
 	}
@@ -807,7 +845,7 @@
 	.exp-details > hgroup > p {
 		flex-basis: 35%;
 		text-align: right;
-		font-size: 15px;
+		font-size: 16px;
 		color: var(--exp-details-header-at);
 	}
 
@@ -831,9 +869,9 @@
 	}
 
 	.exp-details > ul > li {
-		list-style: "-" outside;
-		font-size: 14px;
-		padding-left: 4px;
+		list-style: '-' outside;
+		font-size: 16px;
+		padding: 2px 0 2px 4px;
 	}
 
 	.exp-details > ul > li::marker {
