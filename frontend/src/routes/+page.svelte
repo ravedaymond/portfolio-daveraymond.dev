@@ -1,4 +1,6 @@
 <script>
+	import { onMount } from "svelte";
+
 	let copyName = 'Dave Raymond';
 	let copyDate = new Date().getFullYear().toString();
 
@@ -12,6 +14,22 @@
 		mgradient.x = event.pageX - window.scrollX;
 		mgradient.y = event.pageY - window.scrollY;
 	}
+
+	function updateNavSectionAnchors(event) {
+
+	}
+
+	let navSectionObservers = [];
+	onMount(() => {
+		let query = document.querySelectorAll("main > section");
+		for(let i = 0; i < query.length; i++) {
+			navSectionObservers[i] = new IntersectionObserver(updateNavSectionAnchors, {
+				root: document.querySelector("html"),
+				rootMargin: "0px",
+				threshold: 1.0
+			});
+		}
+	});
 </script>
 
 <svelte:window on:mousemove={mousegradientmove} />
