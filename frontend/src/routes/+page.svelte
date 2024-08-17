@@ -1,9 +1,24 @@
 <script>
 	let copyName = 'Dave Raymond';
 	let copyDate = new Date().getFullYear().toString();
+
+	const mgradient = {
+		x: 0,
+		y: 0
+	};
+
+	/** @param {MouseEvent} event */
+	function mousegradientmove(event) {
+		mgradient.x = event.pageX - window.scrollX;
+		mgradient.y = event.pageY - window.scrollY;
+	}
+
+
 </script>
 
+<svelte:window on:mousemove={mousegradientmove} />
 <div class="page-wrapper">
+	<span id="mouse-gradient" style="translate: calc(-50% + {mgradient.x}px) calc(-50% + {mgradient.y}px);"></span>
 	<div class="header-nav-wrapper">
 		<header>
 			<hgroup>
@@ -17,13 +32,13 @@
 			</hgroup>
 			<div>
 				<figure class="portrait">
-					<figcaption>I am a...<span>&nbsp;🖥️</span>Software Engineer.</figcaption>
+					<figcaption>I am a <span>&nbsp;🖥️</span>Software Engineer</figcaption>
 					<div class="portrait-frame">
 						<img src="/images/portraits/a.png" alt="Black and white headshot." />
 					</div>
 				</figure>
 				<figure class="portrait">
-					<figcaption hidden>I am a...<span>&nbsp;🌲</span>Outdoors Enthusiast.</figcaption>
+					<figcaption hidden>I am a <span>&nbsp;🌲</span>Outdoors Enthusiast</figcaption>
 					<div class="portrait-frame">
 						<img
 							src="/images/portraits/b.png"
@@ -32,7 +47,7 @@
 					</div>
 				</figure>
 				<figure class="portrait">
-					<figcaption hidden>I am a...<span>&nbsp;🚀Space Nerd.</span></figcaption>
+					<figcaption hidden>I am a <span>&nbsp;🚀</span>Space Nerd</figcaption>
 					<div class="portrait-frame">
 						<img
 							src="/images/portraits/c.png"
@@ -52,29 +67,25 @@
 			</div>
 			<ul>
 				<li>
-					<a href="https://linkedin.com/in/dave-raymond" target="_blank"  rel="external opener" aria-label="LinkedIn">
-						<svg xmlns="http://www.w3.org/2000/svg" height="72" viewBox="0 0 72 72" width="72">
-							<g fill="none" fill-rule="evenodd">
-								<path
-									d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z"
-									fill="#007EBB"
-								/>
-								<path
-									d="M62,62 L51.315625,62 L51.315625,43.8021149 C51.315625,38.8127542 49.4197917,36.0245323 45.4707031,36.0245323 C41.1746094,36.0245323 38.9300781,38.9261103 38.9300781,43.8021149 L38.9300781,62 L28.6333333,62 L28.6333333,27.3333333 L38.9300781,27.3333333 L38.9300781,32.0029283 C38.9300781,32.0029283 42.0260417,26.2742151 49.3825521,26.2742151 C56.7356771,26.2742151 62,30.7644705 62,40.051212 L62,62 Z M16.349349,22.7940133 C12.8420573,22.7940133 10,19.9296567 10,16.3970067 C10,12.8643566 12.8420573,10 16.349349,10 C19.8566406,10 22.6970052,12.8643566 22.6970052,16.3970067 C22.6970052,19.9296567 19.8566406,22.7940133 16.349349,22.7940133 Z M11.0325521,62 L21.769401,62 L21.769401,27.3333333 L11.0325521,27.3333333 L11.0325521,62 Z"
-									fill="#FFF"
-								/>
-							</g>
+					<a href="https://linkedin.com/in/dave-raymond" target="_blank"  rel="external noopener noreferrer" aria-label="LinkedIn">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+							<path 
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
+								fill="#629fa0"
+							/>
 						</svg>
 					</a>
 				</li>
 				<li>
-					<a href="https://github.com/ravedaymond" target="_blank" rel="external opener" aria-label="GitHub">
+					<a href="https://github.com/ravedaymond" target="_blank" rel="external noopener noreferrer" aria-label="GitHub">
 						<svg xmlns="http://www.w3.org/2000/svg" width="98" viewBox="0 0 98 96" height="96">
 							<path
 								fill-rule="evenodd"
 								clip-rule="evenodd"
 								d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
-								fill="#24292f"
+								fill="#629fa0"
 							/>
 						</svg>
 					</a>
@@ -116,8 +127,7 @@
 				navigate freeways of light through mouse and keyboard, engaging in the largest celebration
 				of creativity, innovation, and human connection that has ever existed. An ever-expanding and
 				evolving "
-				<a href="/declaration_of_the_independence_of_cyberspace.pdf" target="_blank" rel="opener" 
-				style="text-decoration: none; color: inherit;">
+				<a href="/declaration_of_the_independence_of_cyberspace.pdf" target="_blank" style="text-decoration: none; color: inherit;">
 					civilization of the Mind
 				</a>"...
 			</p>
@@ -127,89 +137,90 @@
 			<h2 class="sr-only">Experience</h2>
 			<div class="exp-container">
 				<time datetime="2024-07">Jul 2024</time>
-				<section class="exp-card">
-					<hgroup>
-						<h3>Full Stack Engineer</h3>
-						<p><span class="sr-only">at</span>
-							<a href="https://www.fidelity.com/" target="_blank" rel="external opener nofollow">
+				<a href="https://www.fidelity.com/" target="_blank" rel="external noopener noreferrer nofollow">
+					<section class="exp-details">
+						<hgroup>
+							<h3>Full Stack Engineer</h3>
+							<p>
+								<span class="sr-only">at</span>
 								Fidelity Investments<span>&nbsp;&nearr;</span>
-							</a>
-						</p>
-					</hgroup>
-					<ul>
-						<li>
-							Created net-new Angular SPA to standardize data and process for all platform clients
-							filing security forms with the SEC.
-						</li>
-						<li>
-							Added features to existing Angular client applications to improve client managing of
-							employee equities and benefits
-						</li>
-						<li>
-							Collaborated with UI/UX leadership teams to improve end user experience and client
-							workflow for new applications.
-						</li>
-						<li>
-							Engaged with accessibility teams to ensure applications met or surpassed 508
-							accessibility standards.
-						</li>
-					</ul>
-				</section>
+							</p>
+						</hgroup>
+						<ul>
+							<li>
+								Created net-new Angular SPA to standardize data and process for all platform clients
+								filing security forms with the SEC.
+							</li>
+							<li>
+								Added features to existing Angular client applications to improve client managing of
+								employee equities and benefits.
+							</li>
+							<li>
+								Collaborated with UI/UX leadership teams to improve end user experience and client
+								workflow for new applications.
+							</li>
+							<li>
+								Engaged with accessibility teams to ensure applications met or surpassed 508
+								accessibility standards.
+							</li>
+						</ul>
+					</section>
+				</a>
 			</div>
 			<div class="exp-container">
 				<time datetime="2022-06">Jun 2022</time>
-				<section class="exp-card">
-					<hgroup>
-						<h3>Software Engineer</h3>
-						<p><span class="sr-only">at</span>
-							<a href="https://www.fidelity.com/" target="_blank" rel="external opener nofollow">
-								Fidelity Investments<span>&nbsp;&nearr;</span>
-							</a>
-						</p>
-					</hgroup>
-					<ul>
-						<li>
-							Developed scalable multi-threaded batch application to liquidate expiring options using
-							Java and Spring Boot.
-						</li>
-						<li>
-							Designed and developed aggregate rule engine to enable dynamic control over current and
-							future batch applications.
-						</li>
-						<li>
-							Created shared Java libraries to standardize Oracle database integration across
-							applications.
-						</li>
-						<li>
-							Lead on Oracle modernization effort across Risk Management to standardize Oracle PL/SQL
-							procedures.
-						</li>
-					</ul>
-				</section>
+				<a href="https://www.fidelity.com/" target="_blank" rel="external noopener noreferrer nofollow">
+					<section class="exp-details">
+						<hgroup>
+							<h3>Software Engineer</h3>
+							<p>
+								<span class="sr-only">at</span>Fidelity Investments<span>&nbsp;&nearr;</span>								
+							</p>
+						</hgroup>
+						<ul>
+							<li>
+								Developed scalable multi-threaded batch application to liquidate expiring options using
+								Java and Spring Boot.
+							</li>
+							<li>
+								Designed and developed aggregate rule engine to enable dynamic control over current and
+								future batch applications.
+							</li>
+							<li>
+								Created shared Java libraries to standardize Oracle database integration across
+								applications.
+							</li>
+							<li>
+								Lead on Oracle modernization effort across Risk Management to standardize Oracle PL/SQL
+								procedures.
+							</li>
+						</ul>
+					</section>			
+				</a>
 			</div>
 			<div class="exp-container">
 				<time datetime="2019-05">May 2019</time>
-				<section class="exp-card">
-					<hgroup>
-						<h3>LEAP Associate Software Engineer</h3>
-						<p><span class="sr-only">at</span>
-							<a href="https://www.fidelity.com/" target="_blank" rel="external opener nofollow">
-								Fidelity Investments<span>&nbsp;&nearr;</span>
-							</a>
-						</p>
-					</hgroup>
-					<ul>
-						<li>
-							Improved UI/UX, refactored, and modernized internal social media messaging board
-							application using Angular.
-						</li>
-						<li>Developed back-end web APIs using Node.js and Spring Boot.</li>
-						<li>
-							Worked with relational and non-relational database solutions such as Oracle, MySQL, and
-							MongoDB.
-						</li>
-					</ul>
-				</section>
+				<a href="https://jobs.fidelity.com/students/leap-program/" target="_blank" rel="external noreferrer noopener nofollow">
+					<section class="exp-details">
+						<hgroup>
+							<h3>LEAP Associate Software Engineer</h3>
+							<p>
+								<span class="sr-only">at</span>Fidelity Investments<span>&nbsp;&nearr;</span>
+							</p>
+						</hgroup>
+						<ul>
+							<li>
+								Improved UI/UX, refactored, and modernized internal social media messaging board
+								application using Angular.
+							</li>
+							<li>Developed back-end web APIs using Node.js and Spring Boot.</li>
+							<li>
+								Worked with relational and non-relational database solutions such as Oracle, MySQL, and
+								MongoDB.
+							</li>
+						</ul>
+					</section>
+				</a>
 			</div>
 			<div class="exp-container">
 				<time datetime="2019-01">Jan 2019</time>
@@ -253,7 +264,7 @@
 		</section>
 	</main>
 	<footer>
-		<a href="https://github.com/ravedaymond">
+		<a href="https://github.com/ravedaymond" target="_blank" rel="external noopener noreferrer" aria-label="GitHub">
 			Designed &amp; developed by {copyName} &copy; {copyDate}
 		</a>
 	</footer>
@@ -262,28 +273,9 @@
 <style>
 
 	:root {
-		/* Color variables */
-		--c-polar-1: #2e3440;
-		--c-polar-2: #3b4252;
-		--c-polar-3: #434c5e;
-		--c-polar-4: #4c566a;
-		--c-snow-1: #d8dee9;
-		--c-snow-2: #e5e9f0;
-		--c-snow-3: #eceff4;
-
-		--c-frost-1: #8fbcbb;
-		--c-frost-2: #88c0d0;
-		--c-frost-3: #81a1c1;
-		--c-frost-4: #5e81ac;
-
-		--c-aurora-red: #bf616a;
-		--c-aurora-orange: #d08770;
-		--c-aurora-yellow: #ebcb8b;
-		--c-aurora-green: #a3be8c;
-		--c-aurora-purple: #b48ead;
-		
-		
+		/* Color variables */		
 		--c1-primary-pine-green: #2d5d5a; /* light text */
+		--c1-primary-pine-green-dark: #122524;
 		--c1-secondaryA1-cloud-nine: #eeefe5;
 		--c1-secondaryA2-silken-pine: #e0e3d4;
 		--c1-secondaryB1-sebring-white: #e7e7dd;
@@ -300,56 +292,62 @@
 		--c2-secondaryA2-coastline: #919da8;
 		--c2-secondaryB1-pale-celery: #f2ebcd;
 		--c2-secondaryB2-hazy-blue: #92c6bb;
-		--c2-shade1-mountain-mist: rgb(212, 221, 220);
-		--c2-shade2-wales-gray: rgb(185, 197, 195);
-		--c2-shade3-mount-saint-anne: rgb(163, 176, 174);
-		--c2-shade4-atmospheric: rgb(136, 157, 154);
-		--c2-shade5-dartsmouth-green: rgb(116, 142, 136);
+		--c2-shade1-mountain-mist: #d4dddc;
+		--c2-shade2-wales-gray: #b9c5c3;
+		--c2-shade3-mount-saint-anne: #a3b0ae;
+		--c2-shade4-atmospheric: #889d9a;
+		--c2-shade5-dartsmouth-green: #748e88;
 		--c2-shade6-verdigris: #55756c; /* light text */
-
-		--color-text-light: #EFEFEF;
-		--color-text-dark: #1A1A1A;
 
 
 		/* Element color variables */
-		--text-primary: var(--color-text-light);
-		--text-selection: var(--c-aurora-purple);
-		--text-selection-bg: var(--c-frost-2);
+		--text-primary: var(--c1-secondaryB1-sebring-white);
+		--text-suppressed: var(--c1-secondaryB2-tranquility);
+		--text-selection: var(--c1-shade1-crystal-blue);
+		--text-selection-bg: var(--c1-shade5-casco-bay);
 
-		--page-wrapper-background: var(--c2-primary-dragonfly);
+		--page-wrapper-background: var(--c1-primary-pine-green-dark);
+		--mouse-gradient: var(--c1-primary-pine-green);
 
-		--header-heading: var(--c1-secondaryA1-cloud-nine);
-		--header-subheading: var(--c1-secondaryA2-silken-pine);
-		--header-description: var(--color-text-light);
+		--header-heading: var(--c2-secondaryB1-pale-celery);
+		--header-subheading: var(--c1-shade4-majestic-blue);
+		--header-description: var(--text-primary);
 
-		--portrait-frame: var(--c2-shade6-verdigris);
+		--portrait-frame: var(--c1-shade6-yukon-green);
 		--portrait-frame-hover: var(--c1-shade4-majestic-blue);
 		--portrait-frame-shadow: rgba(0, 0, 0, 0.4);
 		--portrait-radio-background: var(--c1-shade6-yukon-green);
-		--portrait-radio-hover: var(--c2-shade6-verdigris);
-		--portrait-radio-checked: var(--c1-secondaryA2-silken-pine);
+		--portrait-radio-hover: var(--c1-shade5-casco-bay);
+		--portrait-radio-checked: var(--c1-shade4-majestic-blue);
 
 		--nav-indicator-inactive: var(--c1-shade4-majestic-blue);
-		--nav-indicator-hover: var(--c2-secondaryB2-hazy-blue);
+		--nav-indicator-hover: var(--c1-shade3-tranquil-blue);
 		--nav-indicator-active: var(--c2-secondaryB1-pale-celery);
 		--nav-text-inactive: var(--c1-shade4-majestic-blue);
-		--nav-text-hover: var(--c2-secondaryB2-hazy-blue);
+		--nav-text-hover: var(--c1-shade3-tranquil-blue);
 		--nav-text-active: var(--c2-secondaryB1-pale-celery);
 
-		--exp-card-background: color-mix(in srgb, var(--c1-secondaryA1-cloud-nine) 10%, rgba(0, 0, 0, 0) 100%);
-		--exp-card-background-hover: color-mix(in srgb, var(--c1-secondaryA1-cloud-nine) 20%, rgba(0, 0, 0, 0) 100%);
-		--exp-card-border: var(--c2-shade6-verdigris);
-		--exp-card-border-hover: var();
-		--exp-card-shadow: rgba(0, 0, 0, 0.4);
-		--exp-card-shadow-hover: rgba(0, 0, 0, 0.4);
+		--main-section-border: var(--c1-shade6-yukon-green);
+		--main-section-view-more: var(--c1-shade4-majestic-blue);
+		--main-section-view-more-hover: var(--c1-shade3-tranquil-blue);
 
-		--footer-text: var(--c2-secondaryA2-coastline);
-		--footer-text-hover: var(--c2-secondaryB2-hazy-blue);
+		--exp-details-header-role: var(--c1-secondaryA1-cloud-nine);
+		--exp-details-header-at: var(--c1-secondaryA2-silken-pine);
+		--exp-details-list-style-color: var(--c2-secondaryB1-pale-celery);
+		--exp-details-background: color-mix(in srgb, var(--c1-secondaryA1-cloud-nine) 10%, rgba(0, 0, 0, 0) 100%);
+		--exp-details-background-hover: color-mix(in srgb, var(--c1-secondaryA1-cloud-nine) 100%, rgba(0, 0, 0, 0) 100%);
+		--exp-details-border: var(--c1-shade6-yukon-green);
+		--exp-details-border-hover: var();
+		--exp-details-shadow: rgba(0, 0, 0, 0.4);
+		--exp-details-shadow-hover: rgba(0, 0, 0, 0.4);
+
+		--footer-text: var(--c1-shade4-majestic-blue);
+		--footer-text-hover: var(--c1-shade3-tranquil-blue);
 	}
 
 	::selection {
 		color: var(--text-selection);
-		/* background: var(--text-selection-bg); */
+		background: var(--text-selection-bg);
 	}
 
 	.select-off {
@@ -370,7 +368,27 @@
 		display: inline-block;
 	}
 
+	#mouse-gradient {
+		--size: 6000px;
+		position: fixed;
+		display: flex;
+		border-radius: 50%;
+		width: var(--size);
+		height: var(--size);
+		background: radial-gradient(circle, var(--mouse-gradient) 0%, var(--page-wrapper-background) 60%);
+		pointer-events: none;
+		z-index: -1;
+	}
+
+	#mouse-gradient::after {
+		content: "";
+		width: 16px;
+		height: 16px;
+		border: 1px solid black;
+	}
+
 	.page-wrapper {
+		position: relative;
 		--content-padding: 128px;
 		display: grid;
 		grid-template-columns: 1fr 400px 600px 1fr;
@@ -381,6 +399,7 @@
 		column-gap: 2em;
 
 		background-color: var(--page-wrapper-background);
+		z-index: 0;
 	}
 
 	.header-nav-wrapper {
@@ -460,10 +479,11 @@
 
 		border: 1px solid var(--portrait-frame);
 		border-radius: 4px;
-		box-shadow: 1px 1px 1px var(--portrait-frame-shadow);
+		box-shadow: 1px 1px 4px var(--portrait-frame-shadow);
 
 		transform: rotate(var(--portrait-frame-rot));
 		overflow: hidden;
+		transition-duration: 0.3s;
 	}
 
 	/* Expand frames on hover */
@@ -540,6 +560,7 @@
 		height: 12px;
 		border-radius: 25%;
 		box-shadow: inset 12px 12px var(--portrait-radio-background);
+		transition-duration: 0.2s;
 	}
 
 	header > div > fieldset > input[type='radio']:hover {
@@ -573,6 +594,14 @@
 		height: 25px;
 	}
 
+	header > ul svg path:first-child {
+		transition-duration: 0.2s;
+	}
+
+	header > ul svg:hover path:first-child {
+		fill: var(--c1-shade3-tranquil-blue);
+	}
+
 	nav {
 		grid-area: n;
 		height: min-content;
@@ -599,6 +628,7 @@
 		width: 16px;
 		margin-right: 8px;
 		border-bottom: 1px solid var(--nav-indicator-inactive);
+		transition-duration: 0.3s;
 	}
 
 	nav > ul > li:hover {
@@ -634,15 +664,40 @@
 	}
 
 	main > section {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		margin-top: var(--content-padding);
 		padding-left: 12px;
-		border-left: 1px solid var(--c1-shade6-yukon-green);
+	}
+
+	main > section::before {
+		content: "";
+		position: absolute;
+		display: flex;
+		top: 0;
+		left: -1px;
+		height: 100%;
+		border: 1px solid  var(--main-section-border);
+		border-radius: 4px;
 	}
 
 	main > section > div:last-of-type {
 		align-self: flex-end;
+	}
+	
+
+	main > section > div:last-of-type > a {
+		position: relative;
+		left: 0;
+		text-decoration: none;
+		color: var(--main-section-view-more);
+		transition-duration: 0.3s;
+	}
+
+	main > section > div:last-of-type > a:hover {
+		color: var(--main-section-view-more-hover);
+		left: 16px;
 	}
 
 	#about p {
@@ -650,91 +705,141 @@
 		color: var(--text-primary);
 	}
 
+	#experience {
+		margin-top: calc(var(--content-padding) - 32px);
+		padding-top: 32px;
+	}
+	
 	.exp-container {
 		display: flex;
 	}
 
 	.exp-container > time {
+		display: flex;
 		position: relative;
-		flex-basis: 20%;
-		top: -8px;
+		align-items: center;
+		height: fit-content;
+		margin-top: -16px;
+		flex-basis: 15%;
 		font-size: 14px;
 		font-weight: 600;
+		color: var(--text-suppressed);
+		pointer-events: none;
+		user-select: none;
 	}
 
-	.exp-card {
-		flex-basis: 80%;
-		height: 100%;
-		margin: 8px 0;
-		padding: 8px 16px;
-		border: 1px solid var(--exp-card-border);
+	.exp-container > time::before {
+		content: "";
+		display: inline-block;
+		height: 4px;
+		width: 4px;
+		margin-right: 8px;
+		border: 2px solid var(--text-suppressed);
+		border-radius: 50%;
+	}
+
+	.exp-container > time::after {
+		content: "";
+		position: absolute;
+		left: 100%;
+		width: 400px;
 		border-radius: 4px;
-		box-shadow: 0 1px 2px var(--exp-card-shadow);
-		background-color: var(--exp-card-background);
-		--exp-item-bg: color-mix(in srgb, #1C3F40 100%, rgb(192, 192, 192) 5%);
-		--exp-item-bg-hover: color-mix(in srgb, #1C3F40 100%, rgb(192, 192, 192) 10%);
+		border: 1px solid var(--main-section-border);
+		
 	}
 
-	.exp-card h3 {
-		font-size: 16px;
-	}
-	.exp-card p {
-		font-size: 14px;
+	.exp-container > a {
+		display: flex;
+		flex-basis: 80%;
+		text-decoration: none;
 	}
 
-	.exp-card > hgroup {
+	@property --prop-exp-details-bg-color {
+		syntax: "<color>";
+		initial-value: transparent;
+		inherits: false;
+	}
+	
+	@property --prop-exp-details-border-color-1 {
+		syntax: "<color>";
+		initial-value: transparent;
+		inherits: false;
+	}
+
+	@property --prop-exp-details-border-color-2 {
+		syntax: "<color>";
+		initial-value: transparent;
+		inherits: false;
+	}
+
+	.exp-details {
+		margin-bottom: 16px;
+		padding: 8px 16px;
+		border: 1px solid transparent;
+		border-radius: 4px;
+		background: linear-gradient(var(--prop-exp-details-bg-color), var(--prop-exp-details-bg-color)) padding-box,
+					linear-gradient(30deg, var(--prop-exp-details-border-color-1), var(--prop-exp-details-border-color-2)) border-box;
+		--t: 0.6s;
+		transition: --prop-exp-details-bg-color var(--t), 
+					--prop-exp-details-border-color-1 var(--t), 
+					--prop-exp-details-border-color-2 var(--t);
+	}
+
+	.exp-details:hover {
+		--prop-exp-details-bg-color: var(--mouse-gradient);
+		--prop-exp-details-border-color-1: var(--main-section-border);
+		--prop-exp-details-border-color-2: var(--nav-indicator-hover);
+	}
+
+	.exp-details > hgroup {
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 		align-items: center;
 	}
 
-	.exp-card > hgroup > h3 {
+	.exp-details > hgroup > h3 {
 		flex-basis: 65%;
 		justify-self: flex-start;
+		font-size: 16px;
+		font-weight: 600;
+		color: var(--exp-details-header-role);
 	}
 
-	.exp-card > hgroup > p:first-of-type {
+	.exp-details > hgroup > p {
 		flex-basis: 35%;
 		text-align: right;
 		font-size: 15px;
+		color: var(--exp-details-header-at);
 	}
 
-	.exp-card a {
-		color: inherit;
-		text-decoration: none;
+	.exp-details > hgroup > p > span:last-child {
+		position: relative;
+		left: 0;
+		bottom: 0;
+		transition-duration: 0.3s;
 	}
 
-	.exp-card a:hover {
-		text-decoration: underline;
+	.exp-details:hover > hgroup > p > span:last-child {
+		position: relative;
+		left: 6px;
+		bottom: 6px;
 	}
 
-	.exp-card ul {
+	.exp-details > ul {
 		margin: 0;
 		padding: 0;
+		color: var(--header-description);
 	}
 
-	.exp-card li {
-		list-style: none;
+	.exp-details > ul > li {
+		list-style: "-" outside;
 		font-size: 14px;
-	}
-	
-	.exp-card li:before {
-		content: "";
-		display: inline-block;
-		width: 8px;
-		height: 0px;
-		margin-right: 8px;
-		border-bottom: 1px solid black;
-		vertical-align: middle;
-		text-indent: 8px;
+		padding-left: 4px;
 	}
 
-	.exp-card:hover {
-		box-shadow: 0 2px 2px var(--exp-card-shadow-hover);
-		background-color: var(--exp-card-background-hover);
-		/* background: linear-gradient(45deg, var(--exp-item-bg), var(--exp-item-bg-hover)) padding-box,
-					linear-gradient(45deg, #37705F, #52A27A) border-box; */
+	.exp-details > ul > li::marker {
+		color: var(--exp-details-list-style-color);
 	}
 
 	footer {
