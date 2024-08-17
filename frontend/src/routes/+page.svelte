@@ -33,13 +33,13 @@
 			</hgroup>
 			<div>
 				<figure class="portrait">
-					<figcaption>I am a <span>&nbsp;🖥️</span>Software Engineer</figcaption>
+					<figcaption>I am a<span>&nbsp;🖥️</span>Software Engineer</figcaption>
 					<div class="portrait-frame">
 						<img src="/images/portraits/a.png" alt="Black and white headshot." />
 					</div>
 				</figure>
 				<figure class="portrait">
-					<figcaption hidden>I am a <span>&nbsp;🌲</span>Outdoors Enthusiast</figcaption>
+					<figcaption hidden>I am an<span>&nbsp;🌲</span>Outdoors Enthusiast</figcaption>
 					<div class="portrait-frame">
 						<img
 							src="/images/portraits/b.png"
@@ -48,7 +48,7 @@
 					</div>
 				</figure>
 				<figure class="portrait">
-					<figcaption hidden>I am a <span>&nbsp;🚀</span>Space Nerd</figcaption>
+					<figcaption hidden>I am a<span>&nbsp;🚀</span>Space Nerd</figcaption>
 					<div class="portrait-frame">
 						<img
 							src="/images/portraits/c.png"
@@ -110,10 +110,10 @@
 		</header>
 		<nav class="select-off">
 			<ul>
-				<li class="nav-current"><a href="#about">About</a></li>
-				<li><a href="#experience">Experience</a></li>
-				<li><a href="#labs">Labs</a></li>
-				<li><a href="#contact">Contact</a></li>
+				<a href="#about"><li class="nav-current">About</li></a>
+				<a href="#experience"><li>Experience</li></a>
+				<a href="#labs"><li>Labs</li></a>
+				<a href="#contact"><li>Contact</li></a>
 			</ul>
 		</nav>
 	</div>
@@ -273,8 +273,10 @@
 			</div>
 		</section>
 		<section id="contact">
-			<h2 class="sr-only">Contact</h2>
-			<p>Building cool things is more fun together. Want to get in touch?</p>
+			<hgroup>
+				<h2 class="sr-only">Contact</h2>
+				<p>Building cool things is more fun together. Let's get in touch!</p>
+			</hgroup>
 			<form id="contact-form">
 				<label class="sr-only" for="contact-name">Name</label>
 				<input id="contact-name" placeholder="Name" required />
@@ -283,8 +285,8 @@
 				<label class="sr-only" for="contact-subject">Subject</label>
 				<input id="contact-subject" placeholder="Subject" required />
 				<label class="sr-only" for="contact-message">Message</label>
-				<input id="contact-message" placeholder="Message" required />
-				<input type="submit" />
+				<textarea id="contact-message" placeholder="Hey! I have this cool idea. What do you think about..." required></textarea>
+				<input type="submit" value="Send Message"/>
 			</form>
 		</section>
 	</main>
@@ -408,7 +410,7 @@
 	}
 
 	#mouse-gradient {
-		--size: 6000px;
+		--size: 250vw;
 		position: fixed;
 		display: flex;
 		border-radius: 50%;
@@ -417,7 +419,7 @@
 		background: radial-gradient(
 			circle,
 			var(--mouse-gradient) 0%,
-			var(--page-wrapper-background) 60%
+			var(--page-wrapper-background) 70%
 		);
 		pointer-events: none;
 		z-index: -1;
@@ -440,6 +442,7 @@
 			'. s m .'
 			'. f m .';
 		column-gap: 2em;
+		color: var(--text-primary);
 
 		background-color: var(--page-wrapper-background);
 		z-index: 0;
@@ -665,19 +668,19 @@
 		color: var(--nav-text-inactive);
 	}
 
-	nav > ul {
+	nav ul {
 		display: flex;
 		flex-direction: column;
 	}
 
-	nav > ul > li {
+	nav li {
 		display: inline-block;
 		font-size: 1.2em;
 		font-weight: 300;
 		list-style: none;
 	}
 
-	nav > ul > li::before {
+	nav li::before {
 		content: '';
 		display: inline-block;
 		vertical-align: middle;
@@ -688,20 +691,20 @@
 		transition-duration: 0.3s;
 	}
 
-	nav > ul > li:hover {
+	nav li:hover {
 		color: var(--nav-text-hover);
 	}
 
-	nav > ul > li:hover::before {
+	nav li:hover::before {
 		width: 32px;
 		border-color: var(--nav-indicator-hover);
 	}
 
-	nav > ul > li.nav-current {
+	nav li.nav-current {
 		color: var(--nav-text-active);
 	}
 
-	nav > ul > li.nav-current::before {
+	nav li.nav-current::before {
 		width: 32px;
 		border-color: var(--nav-indicator-active);
 	}
@@ -717,6 +720,11 @@
 		flex-direction: column;
 		padding-top: var(--content-padding);
 		padding-left: 12px;
+	}
+
+	main > section > hgroup {
+		display: flex;
+		flex-direction: column;
 	}
 
 	main > section::before {
@@ -749,7 +757,6 @@
 
 	#about p {
 		margin: 8px 0;
-		color: var(--text-primary);
 	}
 
 	#experience > time {
@@ -805,6 +812,7 @@
 		padding: 8px 16px;
 		border: 1px solid transparent;
 		border-radius: 4px;
+		box-shadow: 1px 1px 4px transparent;
 		background:
 			linear-gradient(var(--prop-exp-details-bg-color), var(--prop-exp-details-bg-color))
 				padding-box,
@@ -816,12 +824,14 @@
 				border-box;
 		--t: 0.6s;
 		transition:
+			box-shadow var(--t),
 			--prop-exp-details-bg-color var(--t),
 			--prop-exp-details-border-color-1 var(--t),
 			--prop-exp-details-border-color-2 var(--t);
 	}
 
 	.exp-details:hover {
+		box-shadow: 1px 1px 4px var(--portrait-frame-shadow);
 		--prop-exp-details-bg-color: var(--mouse-gradient);
 		--prop-exp-details-border-color-1: var(--main-section-border);
 		--prop-exp-details-border-color-2: var(--header-heading);
@@ -876,6 +886,78 @@
 
 	.exp-details > ul > li::marker {
 		color: var(--exp-details-list-style-color);
+	}
+
+	#contact > hgroup > p {
+		align-self: center;
+		font-size: 18px;
+		font-weight: 500;
+	}
+
+	#contact-form {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	#contact-form input,
+	#contact-form textarea {
+		font-size: 16px;
+		margin: 8px 16px;
+		padding: 12px 16px;
+		color: var(--text-primary);
+		background-color: var(--exp-details-background);
+		border: 1px solid var(--exp-details-border);
+		border-radius: 4px;
+	}
+
+	#contact-form input:focus, #contact-form textarea:focus {
+		outline: 1px solid var(--header-heading);
+		
+	}
+
+	#contact-form input::placeholder,
+	#contact-form textarea::placeholder {
+		color: var(--text-suppressed);
+	}
+
+	#contact-form textarea {
+		font-family: inherit;
+		font-size: inherit;
+		min-height: 3em;
+		max-height: 15em;
+		resize: vertical;
+	}
+	
+	#contact-form input[type="submit"] {
+		align-self: center;
+		width: 25%;
+		/* border: 1px solid transparent; */
+		cursor: pointer;
+		box-shadow: 0 1px 4px var(--portrait-frame-shadow);
+		background:
+			linear-gradient(var(--prop-exp-details-bg-color), var(--prop-exp-details-bg-color))
+				padding-box,
+			linear-gradient(
+					30deg,
+					var(--prop-exp-details-border-color-1),
+					var(--prop-exp-details-border-color-2)
+				)
+				border-box;
+		--t: 0.6s;
+		transition:
+			box-shadow var(--t),
+			--prop-exp-details-bg-color var(--t),
+			--prop-exp-details-border-color-1 var(--t),
+			--prop-exp-details-border-color-2 var(--t);
+	}
+
+	#contact-form input[type="submit"]:hover {
+		border: 1px solid transparent;
+		box-shadow: 0 2px 4px var(--portrait-frame-shadow);
+		--prop-exp-details-bg-color: var(--mouse-gradient);
+		--prop-exp-details-border-color-1: var(--main-section-border);
+		--prop-exp-details-border-color-2: var(--header-heading);
 	}
 
 	footer {
