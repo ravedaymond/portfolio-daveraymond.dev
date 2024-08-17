@@ -135,96 +135,100 @@
 		</section>
 		<section id="experience">
 			<h2 class="sr-only">Experience</h2>
-			<div class="exp-container">
-				<time datetime="2024-07">Jul 2024</time>
-				<a href="https://www.fidelity.com/" target="_blank" rel="external noopener noreferrer nofollow">
-					<section class="exp-details">
-						<hgroup>
-							<h3>Full Stack Engineer</h3>
-							<p>
-								<span class="sr-only">at</span>
-								Fidelity Investments<span>&nbsp;&nearr;</span>
-							</p>
-						</hgroup>
-						<ul>
-							<li>
-								Created net-new Angular SPA to standardize data and process for all platform clients
-								filing security forms with the SEC.
-							</li>
-							<li>
-								Added features to existing Angular client applications to improve client managing of
-								employee equities and benefits.
-							</li>
-							<li>
-								Collaborated with UI/UX leadership teams to improve end user experience and client
-								workflow for new applications.
-							</li>
-							<li>
-								Engaged with accessibility teams to ensure applications met or surpassed 508
-								accessibility standards.
-							</li>
-						</ul>
-					</section>
-				</a>
-			</div>
-			<div class="exp-container">
-				<time datetime="2022-06">Jun 2022</time>
-				<a href="https://www.fidelity.com/" target="_blank" rel="external noopener noreferrer nofollow">
-					<section class="exp-details">
-						<hgroup>
-							<h3>Software Engineer</h3>
-							<p>
-								<span class="sr-only">at</span>Fidelity Investments<span>&nbsp;&nearr;</span>								
-							</p>
-						</hgroup>
-						<ul>
-							<li>
-								Developed scalable multi-threaded batch application to liquidate expiring options using
-								Java and Spring Boot.
-							</li>
-							<li>
-								Designed and developed aggregate rule engine to enable dynamic control over current and
-								future batch applications.
-							</li>
-							<li>
-								Created shared Java libraries to standardize Oracle database integration across
-								applications.
-							</li>
-							<li>
-								Lead on Oracle modernization effort across Risk Management to standardize Oracle PL/SQL
-								procedures.
-							</li>
-						</ul>
-					</section>			
-				</a>
-			</div>
-			<div class="exp-container">
-				<time datetime="2019-05">May 2019</time>
-				<a href="https://jobs.fidelity.com/students/leap-program/" target="_blank" rel="external noreferrer noopener nofollow">
-					<section class="exp-details">
-						<hgroup>
-							<h3>LEAP Associate Software Engineer</h3>
-							<p>
-								<span class="sr-only">at</span>Fidelity Investments<span>&nbsp;&nearr;</span>
-							</p>
-						</hgroup>
-						<ul>
-							<li>
-								Improved UI/UX, refactored, and modernized internal social media messaging board
-								application using Angular.
-							</li>
-							<li>Developed back-end web APIs using Node.js and Spring Boot.</li>
-							<li>
-								Worked with relational and non-relational database solutions such as Oracle, MySQL, and
-								MongoDB.
-							</li>
-						</ul>
-					</section>
-				</a>
-			</div>
-			<div class="exp-container">
-				<time datetime="2019-01">Jan 2019</time>
-			</div>
+			<time datetime="2024-07">Jul 2024</time>
+			<a href="https://www.fidelity.com/" target="_blank" rel="external noopener noreferrer nofollow">
+				<section class="exp-details">
+					<hgroup>
+						<h3>Full Stack Engineer</h3>
+						<p>
+							<span class="sr-only">at</span>
+							Fidelity Investments<span>&nbsp;&nearr;</span>
+						</p>
+					</hgroup>
+					<ul>
+						<li>
+							Created net-new Angular SPA to standardize data and process for all platform clients
+							filing security forms with the SEC.
+						</li>
+						<li>
+							Added features to existing Angular client applications to improve client managing of
+							employee equities and benefits.
+						</li>
+						<li>
+							Collaborated with UI/UX leadership teams to improve end user experience and client
+							workflow for new applications.
+						</li>
+						<li>
+							Engaged with accessibility teams to ensure applications met or surpassed 508
+							accessibility standards.
+						</li>
+					</ul>
+				</section>
+			</a>
+			<time datetime="2022-06">Jun 2022</time>
+			<a href="https://www.fidelity.com/" target="_blank" rel="external noopener noreferrer nofollow">
+				<section class="exp-details">
+					<hgroup>
+						<h3>Software Engineer</h3>
+						<p>
+							<span class="sr-only">at</span>Fidelity Investments<span>&nbsp;&nearr;</span>								
+						</p>
+					</hgroup>
+					<ul>
+						<li>
+							Developed scalable multi-threaded batch application to liquidate expiring options using
+							Java and Spring Boot.
+						</li>
+						<li>
+							Designed and developed aggregate rule engine to enable dynamic control over current and
+							future batch applications.
+						</li>
+						<li>
+							Created shared Java libraries to standardize Oracle database integration across
+							applications.
+						</li>
+						<li>
+							Lead on Oracle modernization effort across Risk Management to standardize Oracle PL/SQL
+							procedures.
+						</li>
+					</ul>
+				</section>			
+			</a>
+			<time datetime="2019-05">May 2019</time>
+			<a href="https://jobs.fidelity.com/students/leap-program/" target="_blank" rel="external noreferrer noopener nofollow">
+				<section class="exp-details">
+					<hgroup>
+						<h3>LEAP Associate Software Engineer</h3>
+						<p>
+							<span class="sr-only">at</span>Fidelity Investments<span>&nbsp;&nearr;</span>
+						</p>
+					</hgroup>
+					<ul>
+						<li>
+							Improved UI/UX, refactored, and modernized internal social media messaging board
+							application using Angular.
+						</li>
+						<li>Developed back-end web APIs using Node.js and Spring Boot.</li>
+						<li>
+							Worked with relational and non-relational database solutions such as Oracle, MySQL, and
+							MongoDB.
+						</li>
+					</ul>
+				</section>
+			</a>
+			<time datetime="2019-01">Jan 2019</time>
+			<time datetime="2018-12">Dec 2018</time>
+			<a href="https://www.plymouth.edu/" target="_blank" rel="external noreferrer noopener nofollow">
+				<section class="exp-details">
+					<hgroup>
+						<h3>Bachelor of Science, Information Technology</h3>
+						<p>
+							<span class="sr-only">at</span>Plymouth State University<span>&nbsp;&nearr;</span>
+						</p>
+					</hgroup>
+				</section>
+			</a>
+			<time datetime="2014-01">Jan 2014</time>
 			<div>
 				<a href="/resume.pdf" target="_blank">View complete resume <span>&xrarr;</span></a>
 			</div>
@@ -728,18 +732,11 @@
 		margin-top: calc(var(--content-padding) - 32px);
 		padding-top: 32px;
 	}
-	
-	.exp-container {
-		display: flex;
-	}
 
-	.exp-container > time {
+	#experience > time {
 		display: flex;
-		position: relative;
 		align-items: center;
-		height: fit-content;
-		margin-top: -16px;
-		flex-basis: 15%;
+		margin-bottom: 16px;
 		font-size: 14px;
 		font-weight: 600;
 		color: var(--text-suppressed);
@@ -747,7 +744,7 @@
 		user-select: none;
 	}
 
-	.exp-container > time::before {
+	#experience > time::before {
 		content: "";
 		display: inline-block;
 		height: 4px;
@@ -757,19 +754,16 @@
 		border-radius: 50%;
 	}
 
-	.exp-container > time::after {
+	#experience > time::after {
 		content: "";
-		position: absolute;
-		left: 100%;
-		width: 400px;
+		left: 0;
+		margin-left: 8px;
+		flex-grow: 1;
 		border-radius: 4px;
 		border: 1px solid var(--main-section-border);
-		
 	}
 
-	.exp-container > a {
-		display: flex;
-		flex-basis: 80%;
+	#experience > a {
 		text-decoration: none;
 	}
 
