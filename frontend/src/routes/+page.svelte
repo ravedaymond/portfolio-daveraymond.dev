@@ -1,13 +1,12 @@
-<script>
-	import { onMount } from 'svelte';
+<script lang="ts">
+	import { onMount } from "svelte";
 
 	const mgradient = {
 		x: 0,
 		y: 0
 	};
 
-	/** @param {MouseEvent} event */
-	function mousegradientmove(event) {
+	function mousegradientmove(event: MouseEvent) {
 		mgradient.x = event.pageX - window.scrollX;
 		mgradient.y = event.pageY - window.scrollY;
 	}
@@ -16,30 +15,35 @@
 		setupNavigationObservation();
 	});
 
+	/**
+	 * Stores references to navigation links and creates an IntersectionObserver
+	 * 	for all main sections of content that have an id attribute. 
+	 */
 	function setupNavigationObservation() {
-		const navlinks = { "focus": "" };
-		document.querySelectorAll('nav li').forEach((n) => {
+		const navlinks: any = { "focused": null };
+		document.querySelectorAll("nav li").forEach((n) => {
 			navlinks[n.innerHTML.toLowerCase()] = n;
 		});
-		navlinks.focus = document.getElementById('nav-focus');
+		navlinks.focused = document.getElementById("nav-focus");
 
 		const navObserver = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
+			(entries: IntersectionObserverEntry[]) => {
+				entries.forEach((entry: IntersectionObserverEntry) => {
 					if (entry.isIntersecting) {
-						navlinks.focus.removeAttribute('id');
-						navlinks.focus = navlinks[entry.target.getAttribute('id')];
-						navlinks.focus.setAttribute('id', 'nav-focus');
+						navlinks.focused?.removeAttribute("id");
+						//@ts-ignore
+						navlinks.focused = navlinks[entry.target.getAttribute("id")];
+						navlinks.focused.setAttribute("id", "nav-focus");
 					}
 				});
 			},
 			{
-				rootMargin: '-128px 0px -100% 0px',
-				threshold: [0, 0.15, 1]
+				rootMargin: "-128px 0px -100% 0px",
+				threshold: [0, 1]
 			}
 		);
 
-		let querySections = document.querySelectorAll('main > section[id]');
+		let querySections = document.querySelectorAll("main > section[id]");
 		querySections.forEach((element) => {
 			navObserver.observe(element);
 		});
@@ -66,13 +70,13 @@
 			<div>
 				<figure class="portrait">
 					<figcaption>I am a<span>&nbsp;🖥️</span>Software Engineer</figcaption>
-					<div class="portrait-frame">
+					<div id="portrait-forefront" class="portrait-frame">
 						<img src="/images/portraits/a.png" alt="Black and white headshot." />
 					</div>
 				</figure>
 				<figure class="portrait">
 					<figcaption hidden>I am an<span>&nbsp;🌲</span>Outdoors Enthusiast</figcaption>
-					<div class="portrait-frame">
+					<div id="portrait-middle" class="portrait-frame">
 						<img
 							src="/images/portraits/b.png"
 							alt="Standing alone on a hiking trail looking at mountains."
@@ -144,7 +148,7 @@
 			<ul>
 				<a href="#about"><li id="nav-focus">About</li></a>
 				<a href="#experience"><li>Experience</li></a>
-				<a href="#labs"><li>Labs</li></a>
+				<a href="#projects"><li>Projects</li></a>
 				<a href="#contact"><li>Contact</li></a>
 			</ul>
 		</nav>
@@ -295,13 +299,13 @@
 				<a href="/resume.pdf" target="_blank">View complete resume <span>&xrarr;</span></a>
 			</div>
 		</section>
-		<section id="labs">
+		<section id="projects">
 			<hgroup>
 				<h2 class="sr-only">Labs</h2>
 				<p></p>
 			</hgroup>
 			<div>
-				<a href="#labs" target="_parent">View all labs <span>&xrarr;</span></a>
+				<a href="#" target="_parent">View all projects <span>&xrarr;</span></a>
 			</div>
 		</section>
 		<section id="contact">
@@ -464,7 +468,7 @@
 	}
 
 	#mouse-gradient::after {
-		content: '';
+		content: "";
 		width: 16px;
 		height: 16px;
 		border: 1px solid black;
@@ -477,8 +481,8 @@
 		grid-template-columns: 1fr 400px 600px 1fr;
 		grid-template-rows: auto 1fr;
 		grid-template-areas:
-			'. s m .'
-			'. f m .';
+			". s m ."
+			". f m .";
 		column-gap: 2em;
 		color: var(--text-primary);
 
@@ -495,8 +499,8 @@
 		grid-template-columns: 200px 200px;
 		grid-template-rows: auto 1fr;
 		grid-template-areas:
-			'h h'
-			'. n';
+			"h h"
+			". n";
 	}
 
 	header {
@@ -558,13 +562,13 @@
 	}
 
 	@property --prop-portrait-frame-color-1 {
-		syntax: '<color>';
+		syntax: "<color>";
 		initial-value: transparent;
 		inherits: false;
 	}
 
 	@property --prop-portrait-frame-color-2 {
-		syntax: '<color>';
+		syntax: "<color>";
 		initial-value: transparent;
 		inherits: false;
 	}
@@ -600,17 +604,23 @@
 	header > div > .portrait:nth-child(1) .portrait-frame {
 		margin-bottom: 8px;
 		margin-right: 32px;
-		z-index: 3;
 	}
 
 	header > div > .portrait:nth-child(2) .portrait-frame {
-		z-index: 2;
+		margin: 0;
 	}
 
 	header > div > .portrait:nth-child(3) .portrait-frame {
 		margin-top: 8px;
 		margin-left: 32px;
-		z-index: 1;
+	}
+
+	#portrait-forefront {
+		z-index: 3;
+	}
+
+	#portrait-middle {
+		z-index: 2;
 	}
 
 	/* Shared image properties. Negate any rotation done to frames. */
@@ -650,7 +660,7 @@
 		justify-content: center;
 	}
 
-	header > div > fieldset > input[type='radio'] {
+	header > div > fieldset > input[type="radio"] {
 		display: grid;
 		place-content: center;
 		appearance: none;
@@ -662,13 +672,13 @@
 		transition-duration: 0.2s;
 	}
 
-	header > div > fieldset > input[type='radio']:hover {
+	header > div > fieldset > input[type="radio"]:hover {
 		cursor: pointer;
 		box-shadow: inset 12px 12px var(--portrait-radio-hover);
 	}
 
-	header > div > fieldset > input[type='radio']:checked::before {
-		content: '';
+	header > div > fieldset > input[type="radio"]:checked::before {
+		content: "";
 		--size: 6px;
 		width: var(--size);
 		height: var(--size);
@@ -719,7 +729,7 @@
 	}
 
 	nav li::after {
-		content: '';
+		content: "";
 		display: inline-block;
 		vertical-align: middle;
 		height: 0px;
@@ -766,7 +776,7 @@
 	}
 
 	main > section::before {
-		content: '';
+		content: "";
 		position: absolute;
 		display: flex;
 		bottom: 0;
@@ -793,6 +803,10 @@
 		left: 16px;
 	}
 
+	main > section:last-of-type {
+		min-height: calc(100vh - var(--content-padding));
+	}
+
 	#about p {
 		margin: 8px 0;
 	}
@@ -809,7 +823,7 @@
 	}
 
 	#experience > time::before {
-		content: '';
+		content: "";
 		display: inline-block;
 		height: 4px;
 		width: 4px;
@@ -819,7 +833,7 @@
 	}
 
 	#experience > time::after {
-		content: '';
+		content: "";
 		left: 0;
 		margin-left: 8px;
 		flex-grow: 1;
@@ -828,19 +842,19 @@
 	}
 
 	@property --prop-exp-details-bg-color {
-		syntax: '<color>';
+		syntax: "<color>";
 		initial-value: transparent;
 		inherits: false;
 	}
 
 	@property --prop-exp-details-border-color-1 {
-		syntax: '<color>';
+		syntax: "<color>";
 		initial-value: transparent;
 		inherits: false;
 	}
 
 	@property --prop-exp-details-border-color-2 {
-		syntax: '<color>';
+		syntax: "<color>";
 		initial-value: transparent;
 		inherits: false;
 	}
@@ -917,7 +931,7 @@
 	}
 
 	.exp-details > ul > li {
-		list-style: '-' outside;
+		list-style: "-" outside;
 		font-size: 16px;
 		padding: 2px 0 2px 4px;
 	}
@@ -969,13 +983,13 @@
 		resize: vertical;
 	}
 
-	#contact-form input[type='submit'] {
+	#contact-form input[type="submit"] {
 		align-self: center;
 		width: 25%;
 		cursor: pointer;
 	}
 
-	#contact-form input[type='submit']:hover {
+	#contact-form input[type="submit"]:hover {
 		outline: 1px solid var(--header-heading);
 	}
 
