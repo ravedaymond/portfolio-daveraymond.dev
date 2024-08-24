@@ -1,8 +1,5 @@
 <script>
-	import { onMount } from "svelte";
-
-	let copyName = 'Dave Raymond';
-	let copyDate = new Date().getFullYear().toString();
+	import { onMount } from 'svelte';
 
 	const mgradient = {
 		x: 0,
@@ -15,21 +12,38 @@
 		mgradient.y = event.pageY - window.scrollY;
 	}
 
-	function updateNavSectionAnchors(event) {
-
-	}
-
-	let navSectionObservers = [];
 	onMount(() => {
-		let query = document.querySelectorAll("main > section");
-		for(let i = 0; i < query.length; i++) {
-			navSectionObservers[i] = new IntersectionObserver(updateNavSectionAnchors, {
-				root: document.querySelector("html"),
-				rootMargin: "0px",
-				threshold: 1.0
-			});
-		}
+		setupNavigationObservation();
 	});
+
+	function setupNavigationObservation() {
+		const navlinks = { "focus": "" };
+		document.querySelectorAll('nav li').forEach((n) => {
+			navlinks[n.innerHTML.toLowerCase()] = n;
+		});
+		navlinks.focus = document.getElementById('nav-focus');
+
+		const navObserver = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						navlinks.focus.removeAttribute('id');
+						navlinks.focus = navlinks[entry.target.getAttribute('id')];
+						navlinks.focus.setAttribute('id', 'nav-focus');
+					}
+				});
+			},
+			{
+				rootMargin: '-128px 0px -100% 0px',
+				threshold: [0, 0.15, 1]
+			}
+		);
+
+		let querySections = document.querySelectorAll('main > section[id]');
+		querySections.forEach((element) => {
+			navObserver.observe(element);
+		});
+	}
 </script>
 
 <svelte:window on:mousemove={mousegradientmove} />
@@ -128,7 +142,7 @@
 		</header>
 		<nav class="select-off">
 			<ul>
-				<a href="#about"><li class="nav-current">About</li></a>
+				<a href="#about"><li id="nav-focus">About</li></a>
 				<a href="#experience"><li>Experience</li></a>
 				<a href="#labs"><li>Labs</li></a>
 				<a href="#contact"><li>Contact</li></a>
@@ -303,8 +317,12 @@
 				<label class="sr-only" for="contact-subject">Subject</label>
 				<input id="contact-subject" placeholder="Subject" required />
 				<label class="sr-only" for="contact-message">Message</label>
-				<textarea id="contact-message" placeholder="Hey! I have this cool idea. What do you think about..." required></textarea>
-				<input type="submit" value="Send Message"/>
+				<textarea
+					id="contact-message"
+					placeholder="Hey! I have this cool idea. What do you think about..."
+					required
+				></textarea>
+				<input type="submit" value="Send Message" />
 			</form>
 		</section>
 	</main>
@@ -313,8 +331,10 @@
 			href="https://github.com/ravedaymond"
 			target="_blank"
 			rel="external noopener noreferrer"
-			aria-label="GitHub">Designed &amp; developed by {copyName} &copy; {copyDate}</a
+			aria-label="GitHub"
 		>
+			Designed &amp; developed by Dave Raymond &copy; {new Date().getFullYear().toString()}
+		</a>
 	</footer>
 </div>
 
@@ -523,6 +543,7 @@
 		margin: 0;
 		height: 100%;
 		width: 100%;
+		user-select: none;
 	}
 
 	.portrait > figcaption {
@@ -717,11 +738,11 @@
 		border-color: var(--nav-indicator-hover);
 	}
 
-	nav li.nav-current {
+	#nav-focus {
 		color: var(--nav-text-active);
 	}
 
-	nav li.nav-current::after {
+	#nav-focus::after {
 		width: 32px;
 		border-color: var(--nav-indicator-active);
 	}
@@ -929,7 +950,8 @@
 		border-radius: 4px;
 	}
 
-	#contact-form input:focus, #contact-form textarea:focus {
+	#contact-form input:focus,
+	#contact-form textarea:focus {
 		outline: 1px solid var(--header-heading);
 		box-shadow: 0 2px 4px var(--portrait-frame-shadow);
 	}
@@ -946,14 +968,14 @@
 		max-height: 15em;
 		resize: vertical;
 	}
-	
-	#contact-form input[type="submit"] {
+
+	#contact-form input[type='submit'] {
 		align-self: center;
 		width: 25%;
 		cursor: pointer;
 	}
 
-	#contact-form input[type="submit"]:hover {
+	#contact-form input[type='submit']:hover {
 		outline: 1px solid var(--header-heading);
 	}
 
