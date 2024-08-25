@@ -1,14 +1,23 @@
+<script lang="ts">
+	import { onMount } from 'svelte';
+
+	export let data: any;
+
+	onMount(() => {
+		console.log(document.querySelector('nav li'));
+	});
+</script>
+
 <nav>
-    <ul>
-        <a href="#about"><li id="nav-focus">About</li></a>
-        <a href="#experience"><li>Experience</li></a>
-        <a href="#projects"><li>Projects</li></a>
-        <a href="#contact"><li>Contact</li></a>
-    </ul>
+	<ul>
+		{#each Object.values(data) as item}
+			<a href="#{item.header.toLowerCase()}"><li>{item.header}</li></a>
+		{/each}
+	</ul>
 </nav>
 
 <style>
-    nav {
+	nav {
 		/* Positioning */
 		grid-area: nav;
 		/* Display & Box Model */
@@ -29,7 +38,7 @@
 	}
 
 	nav li::after {
-		content: "";
+		content: '';
 		display: inline-block;
 		vertical-align: middle;
 		height: 0px;
@@ -48,11 +57,11 @@
 		border-color: var(--nav-indicator-hover);
 	}
 
-	#nav-focus {
+	nav :global(#nav-focus) {
 		color: var(--nav-text-active);
 	}
 
-	#nav-focus::after {
+	nav :global(#nav-focus::after) {
 		width: 32px;
 		border-color: var(--nav-indicator-active);
 	}

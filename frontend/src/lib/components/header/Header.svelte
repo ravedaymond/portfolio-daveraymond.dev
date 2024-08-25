@@ -12,14 +12,14 @@
 <div id="header" style="grid-area: {gridarea};">
 	<header>
 		<hgroup>
-			<h1>{data.title}</h1>
+			<h1>{data.header.title}</h1>
 			<p>{@html caption}</p>
-			<p>{@html data.tagline}</p>
+			<p>{@html data.header.tagline}</p>
 		</hgroup>
-		<HeaderPortraits data={data.portraits} bind:caption={caption}/>
+		<HeaderPortraits data={data.header.portraits} bind:caption={caption}/>
 		<HeaderSocial />
 	</header>
-	<HeaderNav />
+	<HeaderNav data={data.main}/>
 </div>
 
 <style>
