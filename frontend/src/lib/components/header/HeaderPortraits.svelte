@@ -58,19 +58,19 @@
 
 <div>
 	<figure class="portrait">
-		<figcaption>I am a&nbsp;{data.captions[0]}</figcaption>
+		<figcaption>I am a&nbsp;{@html data.captions[0]}</figcaption>
 		<div id="portrait-forefront" class="portrait-frame" on:click={expandportrait} on:mouseenter={mouseenter} role="button" tabindex="-1" on:keydown={onkeydown}>
 			<img src={data.images[0].src} alt={data.images[0].alt} />
 		</div>
 	</figure>
 	<figure class="portrait">
-		<figcaption hidden>I am an&nbsp;{data.captions[1]}</figcaption>
+		<figcaption hidden>I am an&nbsp;{@html data.captions[1]}</figcaption>
 		<div id="portrait-middle" class="portrait-frame" on:click={expandportrait} on:mouseenter={mouseenter} role="button" tabindex="-1" on:keydown={onkeydown}>
 			<img src={data.images[1].src} alt={data.images[1].alt} />
 		</div>
 	</figure>
 	<figure class="portrait">
-		<figcaption hidden>I am a&nbsp;{data.captions[2]}</figcaption>
+		<figcaption hidden>I am a&nbsp;{@html data.captions[2]}</figcaption>
 		<div class="portrait-frame" on:click={expandportrait} on:mouseenter={mouseenter} role="button" tabindex="-1" on:keydown={onkeydown}>
 			<img src={data.images[2].src} alt={data.images[2].alt} />
 		</div>
@@ -116,7 +116,7 @@
 		visibility: hidden;
 	}
 
-	.portrait > figcaption > span {
+	.portrait > figcaption :global(span) {
 		font-style: normal;
 	}
 

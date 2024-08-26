@@ -19,15 +19,15 @@
 				images: [
 					{
 						alt: 'Black and white headshot.',
-						src: '/images/portraits/a.png'
+						src: 'images/portraits/a.png'
 					},
 					{
 						alt: 'Standing alone on a ski trail in front of trees and mountains.',
-						src: '/images/portraits/b.png'
+						src: 'images/portraits/b.png'
 					},
 					{
 						alt: 'Making a funny face while wearing a NASA space suit.',
-						src: '/images/portraits/c.png'
+						src: 'images/portraits/c.png'
 					}
 				],
 				captions: [
@@ -108,7 +108,10 @@
 				}
 			},
 			contact: {
-				header: 'Contact'
+				header: 'Contact',
+				form: {
+					title: 'Building cool things is <em>way</em> more fun together.'
+				}
 			}
 		}
 	};
@@ -194,11 +197,11 @@
 			>
 		</Section>
 		<Section id="contact">
-			<h2 class="sr-only" slot="heading">Contact</h2>
+			<h2 class="sr-only" slot="heading">{data.main.contact.header}</h2>
 			<FormContact
 				id="contact-form"
 				hSize="h3"
-				title="Building cool things is <em>way</em> more fun together."
+				title={data.main.contact.form.title}
 			/>
 		</Section>
 	</main>
