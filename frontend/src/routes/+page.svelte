@@ -192,9 +192,6 @@
 		</Section>
 		<Section id={data.main.projects.header.toLowerCase()}>
 			<h2 class="sr-only" slot="heading">{data.main.projects.header}</h2>
-			<SectionViewMore href={data.main.projects.more.url}
-				>{data.main.projects.more.text}</SectionViewMore
-			>
 		</Section>
 		<Section id="contact">
 			<h2 class="sr-only" slot="heading">{data.main.contact.header}</h2>
