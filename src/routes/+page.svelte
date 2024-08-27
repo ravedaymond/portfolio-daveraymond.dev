@@ -44,7 +44,7 @@
 					`I'm fortunate enough to have grown up alongside technology. I recall not having internet in the home, as well as the shouts whenever the phone rang once we did. I saw the legend of Nokia pass to the Motorola Razr, then to the Apple iPhone.`,
 					`This unique relationship with technology has created a feeling of ownership over how it has evolved and the direction in which it is going, and it allows me to ask 'Why this way?' as I have seen ways change countless times.`,
 					`Technology has allowed us to visit and populate a vast digital frontier. We've learned to navigate freeways of light through mouse and keyboard, engaging in the largest celebration of creativity, innovation, and human connection that has ever existed. An ever-expanding and evolving "<a href="/files/declaration_of_the_independence_of_cyberspace.pdf" target="_blank">civilization of the Mind</a>"...`,
-					`And I am <em>enthralled</em> by the future that lies ahead.`
+					`And I am <em>enthralled</em> by the possibilities that lies ahead.`
 				]
 			},
 			experience: {
@@ -188,7 +188,7 @@
 			</hgroup>
 			{#each data.main.experience.content as role}
 				{#if role.end}
-					<ExperienceTime value={new Date(role.end)} />
+					<ExperienceTime value={role.end} />
 				{/if}
 				<ExperienceCard
 					hSize="h3"
@@ -198,7 +198,7 @@
 					list={role.list}
 				/>
 				{#if role.start}
-					<ExperienceTime value={new Date(role.start)} />
+					<ExperienceTime value={role.start} />
 				{/if}
 			{/each}
 			<SectionViewMore href={data.main.experience.more.url}>

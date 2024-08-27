@@ -1,7 +1,12 @@
 <script lang="ts">
-    export let value: Date;
+	import { onMount } from "svelte";
+
+    export let value: string | Date;
+	onMount(() => {
+		value = new Date(value);
+	});
 </script>
-<time datetime={value.toLocaleDateString("en-US", { year: "numeric", month: "2-digit"})}>{value.toLocaleDateString("en-US", { month: "short", year: "numeric"})}</time>
+<time datetime={value.toLocaleString("en-US", { year: "numeric", month: "2-digit"})}>{value.toLocaleString("en-US", { month: "short", year: "numeric"})}</time>
 
 <style>
 	time {
