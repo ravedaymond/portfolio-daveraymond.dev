@@ -28,7 +28,7 @@
 	<textarea
 		id="contact-message"
 		placeholder="Hey! I have this cool idea. What do you think about..."
-		required
+		required disabled
 	></textarea>
 	<input type="submit" value="Send Message" disabled/>
 </form>
