@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	export let data: any;
+	export let data: any[];
 
 	onMount(() => {
 		document.querySelector('nav li')?.setAttribute('id', 'nav-focus');

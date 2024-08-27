@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '@fontsource-variable/urbanist';
 	import { onMount } from 'svelte';
+	import { replaceState } from '$app/navigation';
 	import Header from '$lib/components/header/Header.svelte';
 	import Section from '$lib/components/sections/Section.svelte';
 	import SectionViewMore from '$lib/components/sections/SectionViewMore.svelte';
@@ -137,9 +138,9 @@
 				entries.forEach((entry: IntersectionObserverEntry) => {
 					if (entry.isIntersecting) {
 						navlinks.focused?.removeAttribute('id');
-						//@ts-ignore
-						navlinks.focused = navlinks[entry.target.getAttribute('id')];
+						navlinks.focused = navlinks[entry.target.getAttribute('id') || "null"];
 						navlinks.focused.setAttribute('id', 'nav-focus');
+						replaceState(navlinks.focused.parentNode.getAttribute("href"), {});
 					}
 				});
 			},
