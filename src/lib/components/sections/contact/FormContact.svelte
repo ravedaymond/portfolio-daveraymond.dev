@@ -19,18 +19,18 @@
 		{/if}
 	</hgroup>
 	<label class="sr-only" for="contact-name">Name</label>
-	<input id="contact-name" placeholder="Name" required />
+	<input id="contact-name" placeholder="Name" required disabled />
 	<label class="sr-only" for="contact-email">Email</label>
-	<input type="email" id="contact-email" placeholder="Email" required />
+	<input type="email" id="contact-email" placeholder="Email" required disabled />
 	<label class="sr-only" for="contact-subject">Subject</label>
-	<input id="contact-subject" placeholder="Subject" required />
+	<input id="contact-subject" placeholder="Subject" required disabled />
 	<label class="sr-only" for="contact-message">Message</label>
 	<textarea
 		id="contact-message"
 		placeholder="Hey! I have this cool idea. What do you think about..."
 		required
 	></textarea>
-	<input type="submit" value="Send Message" />
+	<input type="submit" value="Send Message" disabled/>
 </form>
 
 <style>
