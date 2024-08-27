@@ -68,7 +68,6 @@
 	@media screen and (max-width: 1100px) {
 		section {
 			padding: var(--vpadding-mobile) 1em;
-			margin-top: var(--vpadding-mobile);
 		}
 
 		section:before {

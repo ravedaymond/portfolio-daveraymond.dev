@@ -155,6 +155,10 @@
 		});
 	}
 
+	function onresize() {
+		setMainLastSectionMarginBottom();
+	}
+
 	function setMainLastSectionMarginBottom() {
 		let section = document.querySelector('main > section:last-of-type') as HTMLElement;
 		section.style.setProperty(
@@ -164,7 +168,7 @@
 	}
 </script>
 
-<svelte:window on:resize={setMainLastSectionMarginBottom} />
+<svelte:window on:resize={onresize} />
 <div>
 	<div id="mobile-background" class="mobile-only"></div>
 	<MouseGradient
