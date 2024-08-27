@@ -31,9 +31,9 @@
 				<h6>{title}</h6>
 			{/if}
 			<p>
-				<span class="sr-only">at </span>
-				{company}<span>&nbsp;&nearr;</span>
+				<span class="sr-only">at </span>{company}
 			</p>
+			<span>&nbsp;&nearr;</span>
 		</hgroup>
 		<ul>
 			{#each list as item}
@@ -44,21 +44,20 @@
 </a>
 
 <style>
-
-@property --prop-exp-details-bg-color {
-		syntax: "<color>";
+	@property --prop-exp-details-bg-color {
+		syntax: '<color>';
 		initial-value: transparent;
 		inherits: false;
 	}
 
 	@property --prop-exp-details-border-color-1 {
-		syntax: "<color>";
+		syntax: '<color>';
 		initial-value: transparent;
 		inherits: false;
 	}
 
 	@property --prop-exp-details-border-color-2 {
-		syntax: "<color>";
+		syntax: '<color>';
 		initial-value: transparent;
 		inherits: false;
 	}
@@ -84,7 +83,6 @@
 			--prop-exp-details-bg-color var(--t),
 			--prop-exp-details-border-color-1 var(--t),
 			--prop-exp-details-border-color-2 var(--t);
-		user-select: none;
 	}
 
 	section:hover {
@@ -101,25 +99,34 @@
 		align-items: center;
 	}
 
-	h2, h3, h4, h5, h6 {
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		flex-basis: 65%;
 		justify-self: flex-start;
-		font-size: 18px;
+		font-size: 1.2em;
 		font-weight: 600;
 		color: var(--exp-details-header-role);
 	}
 
 	p {
-		flex-basis: 35%;
+		flex-basis: 30%;
 		text-align: right;
-		font-size: 16px;
+		font-size: 1em;
 		color: var(--exp-details-header-at);
+	}
+
+	section:hover p {
+		text-decoration: underline;
+		text-decoration-color: var(--text-suppressed);
 	}
 
 	span:last-child {
 		position: relative;
-		left: 0;
 		bottom: 0;
+		left: 0;
 		transition-duration: 0.3s;
 	}
 
@@ -136,12 +143,19 @@
 	}
 
 	li {
-		list-style: "-" outside;
+		list-style: '-' outside;
 		font-size: 16px;
 		padding: 2px 0 2px 4px;
 	}
 
 	li::marker {
 		color: var(--exp-details-list-style-color);
+	}
+
+	@media screen and (max-width: 1100px) {
+		p {
+			text-decoration: underline;
+			text-decoration-color: var(--text-suppressed);
+		}
 	}
 </style>
