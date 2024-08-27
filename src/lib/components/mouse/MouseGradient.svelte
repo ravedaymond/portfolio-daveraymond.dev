@@ -29,4 +29,10 @@
 		pointer-events: none;
 		translate: calc(-50% + var(--x)) calc(-50% + var(--y));
 	}
+
+	@media screen and (max-width: 1100px) {
+		span {
+			display: none;
+		}
+	}
 </style>

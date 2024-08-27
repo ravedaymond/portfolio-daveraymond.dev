@@ -1,7 +1,7 @@
 <script lang="ts">
 	import HeaderPortraits from './HeaderPortraits.svelte';
 	import HeaderSocial from './HeaderSocial.svelte';
-	import HeaderNav from './HeaderNav.svelte';
+	import HeaderNav from './Nav.svelte';
 
 	export let gridarea: string;
 	export let data: any;
@@ -47,6 +47,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: row-reverse;
+		max-width: 400px;
 		/* Other */
 	}
 
@@ -66,5 +67,18 @@
 	hgroup > p:last-of-type {
 		color: var(--header-description);
 		padding: 2px 0;
+	}
+
+	@media screen and (max-width: 1100px) {
+		#header {
+			position: relative;
+			margin-bottom: var(--vpadding-mobile);
+			grid-template-areas: 
+				'header'
+				'nav';
+			grid-template-columns: auto;
+			grid-template-rows: auto;
+			margin-left: 1em;
+		}
 	}
 </style>

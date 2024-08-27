@@ -20,10 +20,12 @@
 	footer {
 		/* Positioning */
 		position: sticky;
-		top: calc(100vh - var(--vpadding));
+		top: calc(100vh - var(--vpadding) - 1em);
 		/* Display & Box Model */
+		width: 100%;
 		height: min-content;
 		/* Other */
+		text-align: center;
 	}
 
 	footer a {
@@ -33,5 +35,12 @@
 
 	footer a:hover {
 		color: var(--footer-text-hover);
+	}
+
+	@media screen and (max-width: 1100px) {
+		footer {
+			position: relative;
+			top: calc(-1*var(--vpadding-mobile));
+		}
 	}
 </style>

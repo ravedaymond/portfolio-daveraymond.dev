@@ -44,7 +44,7 @@
 					`I'm fortunate enough to have grown up alongside technology. I recall not having internet in the home, as well as the shouts whenever the phone rang once we did. I saw the legend of Nokia pass to the Motorola Razr, then to the Apple iPhone.`,
 					`This unique relationship with technology has created a feeling of ownership over how it has evolved and the direction in which it is going, and it allows me to ask 'Why this way?' as I have seen ways change countless times.`,
 					`Technology has allowed us to visit and populate a vast digital frontier. We've learned to navigate freeways of light through mouse and keyboard, engaging in the largest celebration of creativity, innovation, and human connection that has ever existed. An ever-expanding and evolving "<a href="/files/declaration_of_the_independence_of_cyberspace.pdf" target="_blank">civilization of the Mind</a>"...`,
-					`And I am <em>enthralled</em> at the future that lies ahead.`
+					`And I am <em>enthralled</em> by the future that lies ahead.`
 				]
 			},
 			experience: {
@@ -110,7 +110,7 @@
 			contact: {
 				header: 'Contact',
 				form: {
-					title: 'Building cool things is <em>way</em> more fun together.'
+					title: 'Building cool things is <em>way</em> more fun together. Let\'s get in touch!'
 				}
 			}
 		}
@@ -118,6 +118,7 @@
 
 	onMount(() => {
 		setupNavigationObservation();
+		setMainLastSectionMarginBottom();
 	});
 
 	/**
@@ -153,9 +154,19 @@
 			navObserver.observe(element);
 		});
 	}
+
+	function setMainLastSectionMarginBottom() {
+		let section = document.querySelector('main > section:last-of-type') as HTMLElement;
+		section.style.setProperty(
+			'margin-bottom',
+			'calc(100vh - ' + section?.clientHeight + 'px - 64px)'
+		);
+	}
 </script>
 
+<svelte:window on:resize={setMainLastSectionMarginBottom} />
 <div>
+	<div id="mobile-background" class="mobile-only"></div>
 	<MouseGradient
 		--size="var(--mouse-gradient-size)"
 		--gradient-center="var(--mouse-gradient-center)"
@@ -164,13 +175,17 @@
 	<Header gridarea="headnav" {data} />
 	<main>
 		<Section id={data.main.about.header.toLowerCase()}>
-			<h2 class="sr-only" slot="heading">{data.main.about.header}</h2>
+			<hgroup class="mobile-only" slot="hgroup">
+				<h2>{data.main.about.header}</h2>
+			</hgroup>
 			{#each data.main.about.content as p}
 				<p>{@html p}</p>
 			{/each}
 		</Section>
 		<Section id={data.main.experience.header.toLowerCase()}>
-			<h2 class="sr-only" slot="heading">{data.main.experience.header}</h2>
+			<hgroup class="mobile-only" slot="hgroup">
+				<h2>{data.main.experience.header}</h2>
+			</hgroup>
 			{#each data.main.experience.content as role}
 				{#if role.end}
 					<ExperienceTime value={new Date(role.end)} />
@@ -191,15 +206,15 @@
 			</SectionViewMore>
 		</Section>
 		<Section id={data.main.projects.header.toLowerCase()}>
-			<h2 class="sr-only" slot="heading">{data.main.projects.header}</h2>
+			<hgroup class="mobile-only" slot="hgroup">
+				<h2>{data.main.projects.header}</h2>
+			</hgroup>
 		</Section>
-		<Section id="contact">
-			<h2 class="sr-only" slot="heading">{data.main.contact.header}</h2>
-			<FormContact
-				id="contact-form"
-				hSize="h3"
-				title={data.main.contact.form.title}
-			/>
+		<Section id={data.main.contact.header.toLowerCase()}>
+			<hgroup class="sr-only" slot="hgroup">
+				<h2>{data.main.contact.header}</h2>
+			</hgroup>
+			<FormContact id="contact-form" hSize="h3" title={data.main.contact.form.title} />
 		</Section>
 	</main>
 	<Footer gridarea="footer" />
@@ -216,7 +231,7 @@
 	:root {
 		/* Color variables */
 		--c1-primary-pine-green: #2d5d5a; /* light text */
-		--c1-primary-pine-green-dark: #122524;
+		--c1-primary-pine-green-dark: rgb(18, 37, 36);
 		--c1-secondaryA1-cloud-nine: #eeefe5;
 		--c1-secondaryA2-silken-pine: #e0e3d4;
 		--c1-secondaryB1-sebring-white: #e7e7dd;
@@ -292,6 +307,11 @@
 
 		--footer-text: var(--c1-shade4-majestic-blue);
 		--footer-text-hover: var(--c1-shade3-tranquil-blue);
+
+		--mobile-nav-height: calc(32px + 2em);
+		--mobile-width-min: 400px;
+		--mobile-width-max: 600px;
+		--mobile-nav-background: rgba(18, 37, 36, 0.1);
 	}
 
 	/* Page Global Styles
@@ -338,19 +358,25 @@
 		text-decoration: underline;
 	}
 
+	div :global(.mobile-only) {
+		display: none;
+	}
+
 	/* ==========================================================================
 	Page styling
 	========================================================================== */
 	div {
 		/* Positioning */
+		position: relative;
 		/* Display & Box Model */
 		display: grid;
 		grid-template-areas:
 			'. headnav main .'
-			'. footer  main .';
+			'. footer  main .'
+			'. .	   .	.';
 		grid-template-columns: 1fr 400px 600px 1fr;
 		grid-column-gap: 2em;
-		grid-template-rows: auto 1fr;
+		grid-template-rows: auto 1fr auto;
 		height: 100%;
 		/* Font & Text */
 		font-family: 'Urbanist Variable', monospace;
@@ -365,11 +391,42 @@
 		grid-area: main;
 	}
 
-	main > :global(section:last-of-type) {
-		min-height: calc(100vh - var(--vpadding));
-	}
-
 	main :global(a:hover) {
 		color: var(--header-heading);
+	}
+
+	@media screen and (max-width: 1100px) {
+		div {
+			display: grid;
+			grid-template-areas:
+				'. headnav 	.'
+				'. main		.'
+				'. footer	.';
+			grid-template-columns: 1fr minmax(var(--mobile-width-min), var(--mobile-width-max)) 1fr;
+			column-gap: 0;
+			grid-template-rows: auto auto auto;
+			--vpadding-mobile: 64px;
+		}
+
+		div :global(.desktop-only) {
+			display: none;
+		}
+
+		div :global(.mobile-only) {
+			display: unset;
+		}
+
+		#mobile-background {
+			position: fixed;
+			top: var(--mobile-nav-height);
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: linear-gradient(0deg, var(--mouse-gradient-center), var(--page-background));
+		}
+
+		main > :global(section:last-of-type) {
+			margin-bottom: calc(300px);
+		}
 	}
 </style>

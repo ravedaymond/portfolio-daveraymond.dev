@@ -1,5 +1,11 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	export let data: any;
+
+	onMount(() => {
+		document.querySelector('nav li')?.setAttribute('id', 'nav-focus');
+	});
 </script>
 
 <nav>
@@ -20,7 +26,7 @@
 		color: var(--nav-text-inactive);
 	}
 
-	nav ul {
+	ul {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
@@ -31,7 +37,7 @@
 		list-style: none;
 	}
 
-	nav li::after {
+	li::after {
 		content: '';
 		display: inline-block;
 		vertical-align: middle;
@@ -42,21 +48,27 @@
 		transition-duration: 0.3s;
 	}
 
-	nav li:hover {
+	li:hover {
 		color: var(--nav-text-hover);
 	}
 
-	nav li:hover::after {
+	li:hover::after {
 		width: 32px;
 		border-color: var(--nav-indicator-hover);
 	}
 
-	nav :global(#nav-focus) {
+	:global(#nav-focus) {
 		color: var(--nav-text-active);
 	}
 
-	nav :global(#nav-focus::after) {
+	:global(#nav-focus::after) {
 		width: 32px;
 		border-color: var(--nav-indicator-active);
+	}
+
+	@media screen and (max-width: 1100px) {
+		nav {
+			display: none;	
+		}
 	}
 </style>

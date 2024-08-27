@@ -84,6 +84,7 @@
 			--prop-exp-details-bg-color var(--t),
 			--prop-exp-details-border-color-1 var(--t),
 			--prop-exp-details-border-color-2 var(--t);
+		user-select: none;
 	}
 
 	section:hover {

@@ -43,6 +43,7 @@
     hgroup {
         display: flex;
         flex-direction: column;
+		text-align: center;
     }
 
     hgroup > h2, h3, h4, h5, h6 {
@@ -84,7 +85,7 @@
 
 	input[type='submit'] {
 		align-self: center;
-		width: 25%;
+		width: fit-content;
 		cursor: pointer;
 	}
 
