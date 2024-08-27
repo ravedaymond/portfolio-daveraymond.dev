@@ -4,7 +4,7 @@
 	export let title: string;
 </script>
 
-<form {id} netlify>
+<form {id} target="#contact" netlify>
 	<hgroup>
 		{#if hSize === 'h2'}
 			<h2>{@html title}</h2>

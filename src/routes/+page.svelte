@@ -55,8 +55,8 @@
 				},
 				content: [
 					{
-						end: '2024 Jul',
-						start: '2022 Jun',
+						end: 'Jul 2024',
+						start: 'Jun 2022',
 						title: 'Full Stack Engineer',
 						company: 'Fidelity Investments',
 						url: 'https://www.fidelity.com/',
@@ -68,7 +68,7 @@
 						]
 					},
 					{
-						start: '2019 May',
+						start: 'May 2019',
 						title: 'Software Engineer',
 						company: 'Fidelity Investments',
 						url: 'https://www.fidelity.com/',
@@ -80,7 +80,7 @@
 						]
 					},
 					{
-						start: '2019 Jan',
+						start: 'Jan 2019',
 						title: 'LEAP Associate Software Engineer',
 						company: 'Fidelity Investments',
 						url: 'https://jobs.fidelity.com/students/leap-program/',
@@ -91,8 +91,8 @@
 						]
 					},
 					{
-						end: '2018 Dec',
-						start: '2014-01',
+						end: 'Dec 2018',
+						start: 'Jan 2014',
 						title: 'Bachelor of Science, Information Technology',
 						company: 'Plymouth State University',
 						url: 'https://www.plymouth.edu/',
