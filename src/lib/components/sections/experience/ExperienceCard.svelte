@@ -118,11 +118,6 @@
 		color: var(--exp-details-header-at);
 	}
 
-	section:hover p {
-		text-decoration: underline;
-		text-decoration-color: var(--text-suppressed);
-	}
-
 	span:last-child {
 		position: relative;
 		bottom: 0;
