@@ -178,6 +178,8 @@
 
 	#portrait-forefront {
 		z-index: 3;
+		--prop-portrait-frame-color-1: var(--main-section-border);
+		--prop-portrait-frame-color-2: var(--header-heading);
 	}
 
 	/* Shared image properties. Negate any rotation done to frames. */

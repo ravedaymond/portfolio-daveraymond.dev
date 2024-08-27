@@ -309,7 +309,7 @@
 		--footer-text-hover: var(--c1-shade3-tranquil-blue);
 
 		--mobile-nav-height: calc(32px + 2em);
-		--mobile-width-min: 400px;
+		--mobile-width-min: 375px;
 		--mobile-width-max: 600px;
 		--mobile-nav-background: rgba(18, 37, 36, 0.1);
 	}

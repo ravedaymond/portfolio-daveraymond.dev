@@ -78,7 +78,7 @@
 				'nav';
 			grid-template-columns: auto;
 			grid-template-rows: auto;
-			margin-left: 1em;
+			margin-left: 0.5em;
 		}
 	}
 </style>
