@@ -31,9 +31,9 @@
 					}
 				],
 				captions: [
-					`<span>🖥️</span>Software Engineer`,
-					`<span>🌲</span>Outdoors Enthusiast`,
-					`<span>🚀</span>Space Nerd`
+					`<span>🖥️</span>&nbsp;Software Engineer`,
+					`<span>🌲</span>&nbsp;Outdoors Enthusiast`,
+					`<span>🚀</span>&nbsp;Space Nerd`
 				]
 			}
 		},
