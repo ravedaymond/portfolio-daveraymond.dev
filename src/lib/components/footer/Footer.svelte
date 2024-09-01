@@ -14,8 +14,8 @@
 		</a>
 	</p>
 	<p>
-		This website was built using <a href="https://svelte.dev/">Svelte</a> and utilizes
-		<a href="Web3Forms">Web3Forms</a> and <a href="https://www.hcaptcha.com/">hCaptcha</a>.
+		This website was built using <a href="https://svelte.dev/" target="_blank" rel="external noopener noreferrer nofollow">Svelte</a> and utilizes
+		<a href="https://web3forms.com/" target="_blank" rel="external noopener noreferrer nofollow">Web3Forms</a> and <a href="https://www.hcaptcha.com/" target="_blank" rel="external noopener noreferrer nofollow">hCaptcha</a>.
 	</p>
 </footer>
 

@@ -222,8 +222,8 @@
 			<FormContact id="contact-form" hSize="h3" title={data.main.contact.form.title} />
 			<p id="hcaptcha-privacyterms">
 				This site is protected by hCaptcha and its
-				<a href="https://www.hcaptcha.com/privacy">Privacy Policy</a> and
-				<a href="https://www.hcaptcha.com/terms">Terms of Service</a> apply.
+				<a href="https://www.hcaptcha.com/privacy" target="_blank" rel="external noopener noreferrer nofollow">Privacy Policy</a> and
+				<a href="https://www.hcaptcha.com/terms" target="_blank" rel="external noopener noreferrer nofollow">Terms of Service</a> apply.
 			</p>
 		</Section>
 	</main>
