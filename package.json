@@ -36,6 +36,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource-variable/urbanist": "^5.0.22"
+		"@fontsource-variable/urbanist": "^5.0.22",
+		"@hcaptcha/vanilla-hcaptcha": "^1.1.0-alpha2"
 	}
 }

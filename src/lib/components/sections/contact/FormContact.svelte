@@ -1,10 +1,20 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	export let id: string;
 	export let hSize: `h2` | `h3` | `h4` | `h5` | `h6`;
 	export let title: string;
+
+	const web3forms = 'f575c746-2b33-4693-a491-f85a7ff111f1';
+
+	onMount(() => {
+		const form = document.getElementById(id) as HTMLFormElement;
+		form.reset();
+	});
 </script>
 
-<form {id} action="#contact" netlify>
+<form {id} action="https://api.web3forms.com/submit" method="POST">
+	<input type="hidden" name="access_key" value={web3forms} />
 	<hgroup>
 		{#if hSize === 'h2'}
 			<h2>{@html title}</h2>
@@ -18,19 +28,20 @@
 			<h6>{@html title}</h6>
 		{/if}
 	</hgroup>
-	<label class="sr-only" for="contact-name">Name</label>
-	<input id="contact-name" placeholder="Name" required disabled />
-	<label class="sr-only" for="contact-email">Email</label>
-	<input type="email" id="contact-email" placeholder="Email" required disabled />
-	<label class="sr-only" for="contact-subject">Subject</label>
-	<input id="contact-subject" placeholder="Subject" required disabled />
-	<label class="sr-only" for="contact-message">Message</label>
-	<textarea
-		id="contact-message"
+	<label class="sr-only" for="name">Name</label>
+	<input id="name" placeholder="Name" required />
+	<label class="sr-only" for="email">Email</label>
+	<input type="email" id="email" placeholder="Email" required />
+	<label class="sr-only" for="subject">Subject</label>
+	<input id="subject" placeholder="Subject" required />
+	<label class="sr-only" for="message">Message</label>
+	<textarea id="message" name="message"
 		placeholder="Hey! I have this cool idea. What do you think about..."
 		required
 	></textarea>
-	<input type="submit" value="Send Message" disabled/>
+	<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+	<input type="hidden" name="redirect" value="https://web3forms.com/success" />
+	<button type="submit" value="Send Message" />
 </form>
 
 <style>
@@ -40,17 +51,21 @@
 		align-items: stretch;
 	}
 
-    hgroup {
-        display: flex;
-        flex-direction: column;
+	hgroup {
+		display: flex;
+		flex-direction: column;
 		text-align: center;
-    }
+	}
 
-    hgroup > h2, h3, h4, h5, h6 {
+	hgroup > h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		align-self: center;
 		font-size: 18px;
 		font-weight: 500;
-    }
+	}
 
 	input,
 	textarea {
