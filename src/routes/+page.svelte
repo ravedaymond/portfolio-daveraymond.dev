@@ -45,10 +45,7 @@
 					`I'm fortunate enough to have grown up alongside technology. I recall not having internet in the home, as well as the shouts whenever the phone rang once we did. I saw the legend of Nokia pass to the Motorola Razr, then to the Apple iPhone.`,
 					`This unique relationship with technology has created a feeling of ownership over how it has evolved and the direction in which it is going, and it allows me to ask 'Why this way?' as I have seen ways change countless times.`,
 					`Technology has allowed us to visit and populate a vast digital frontier. We've learned to navigate freeways of light through mouse and keyboard, engaging in the largest celebration of creativity, innovation, and human connection that has ever existed. An ever-expanding and evolving "<a href="/files/declaration_of_the_independence_of_cyberspace.pdf" target="_blank">civilization of the Mind</a>"...`,
-					`And I am <em>enthralled</em> by the possibilities that lies ahead.`,
-					`<hr />`,
-					`Currently I am looking for the next opportunity around the Seattle metropolitan area. While my professional focus has been primarily on Java and Angular, I am looking to branch out and flex my ability to adopt new technologies quickly and to industry standards.`,
-					`When I am not behind a monitor I can be found out exploring nature on foot or by kayak, playing Kerbal Space Program, or learning the newest recipe that caught my appetite.`,
+					`And I am <em>enthralled</em> by the possibilities that lies ahead.`
 				]
 			},
 			experience: {
