@@ -6,14 +6,9 @@
 	export let title: string;
 
 	const web3forms = 'f575c746-2b33-4693-a491-f85a7ff111f1';
-
-	onMount(() => {
-		const form = document.getElementById(id) as HTMLFormElement;
-		form.reset();
-	});
 </script>
 
-<form {id} action="https://api.web3forms.com/submit" method="POST">
+<form {id} action="https://api.web3forms.com/submit" method="POST" autocomplete="off">
 	<input type="hidden" name="access_key" value={web3forms} />
 	<hgroup>
 		{#if hSize === 'h2'}
@@ -29,11 +24,11 @@
 		{/if}
 	</hgroup>
 	<label class="sr-only" for="name">Name</label>
-	<input id="name" placeholder="Name" required />
+	<input id="name" name="name" placeholder="Name" required />
 	<label class="sr-only" for="email">Email</label>
-	<input type="email" id="email" placeholder="Email" required />
+	<input type="email" name="email" id="email" placeholder="Email" required />
 	<label class="sr-only" for="subject">Subject</label>
-	<input id="subject" placeholder="Subject" required />
+	<input id="subject" name="subject" placeholder="Subject" required />
 	<label class="sr-only" for="message">Message</label>
 	<textarea id="message" name="message"
 		placeholder="Hey! I have this cool idea. What do you think about..."
@@ -41,6 +36,7 @@
 	></textarea>
 	<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 	<input type="hidden" name="redirect" value="https://web3forms.com/success" />
+	<div class="h-captcha" data-captcha="true"></div>
 	<input type="submit" value="Send Message" />
 </form>
 
