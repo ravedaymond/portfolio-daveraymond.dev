@@ -405,6 +405,10 @@
 		color: var(--header-heading);
 	}
 
+	/* :global(p) {
+		margin: 8px 0;
+	} */
+
 	@media screen and (max-width: 1100px) {
 		div {
 			display: grid;

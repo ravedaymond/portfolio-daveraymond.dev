@@ -50,7 +50,7 @@
 	<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 	<input type="hidden" name="redirect" value="https://web3forms.com/success" />
 	<input type="submit" value="Send Message" />
-	<div class="h-captcha center-captcha" data-captcha="true"></div>
+	<div class="h-captcha captcha-positioning" data-captcha="true"></div>
 </form>
 
 <style>
@@ -117,7 +117,7 @@
 		outline: 1px solid var(--header-heading);
 	}
 
-	.center-captcha {
+	.captcha-positioning {
 		margin: 8px auto 8px;
 	}
 </style>
