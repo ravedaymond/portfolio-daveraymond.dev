@@ -41,7 +41,7 @@
 	></textarea>
 	<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 	<input type="hidden" name="redirect" value="https://web3forms.com/success" />
-	<button type="submit" value="Send Message" />
+	<input type="submit" value="Send Message" />
 </form>
 
 <style>
