@@ -6,6 +6,19 @@
 	export let title: string;
 
 	const web3forms = 'f575c746-2b33-4693-a491-f85a7ff111f1';
+
+	onMount(() => {
+		const form = (document.getElementById(id) as HTMLFormElement);
+		form.addEventListener("submit", function(e) {
+			const hCaptcha = form.querySelector("textarea[name=h-captcha-response]")?.value;
+
+			if(!hCaptcha) {
+				e.preventDefault();
+				alert("Please fill out the captcha field.");
+				return;
+			}
+		});
+	});
 </script>
 
 <form {id} action="https://api.web3forms.com/submit" method="POST" autocomplete="off">
@@ -37,7 +50,7 @@
 	<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 	<input type="hidden" name="redirect" value="https://web3forms.com/success" />
 	<input type="submit" value="Send Message" />
-	<div class="h-captcha" data-captcha="true"></div>
+	<div class="h-captcha center-captcha" data-captcha="true"></div>
 </form>
 
 <style>
@@ -102,5 +115,9 @@
 
 	input[type='submit']:hover {
 		outline: 1px solid var(--header-heading);
+	}
+
+	.center-captcha {
+		margin: 8px auto 8px;
 	}
 </style>
