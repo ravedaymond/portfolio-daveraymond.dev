@@ -51,8 +51,8 @@
 			experience: {
 				header: 'Experience',
 				more: {
-					url: '/files/resume.pdf',
-					text: 'View complete resume'
+					url: '/files/experience.pdf',
+					text: 'View all professional experience'
 				},
 				content: [
 					{
@@ -404,10 +404,6 @@
 	main :global(a:hover) {
 		color: var(--header-heading);
 	}
-
-	/* :global(p) {
-		margin: 8px 0;
-	} */
 
 	@media screen and (max-width: 1100px) {
 		div {
