@@ -9,14 +9,14 @@
 		const observer = new IntersectionObserver(
 			(entries: IntersectionObserverEntry[]) => {
 				entries.forEach((entry) => {
-					if(entry.isIntersecting) {
-						intersectingHeader?.removeAttribute("id");
+					if (entry.isIntersecting) {
+						intersectingHeader?.removeAttribute('id');
 						intersectingHeader = entry.target;
-						intersectingHeader.setAttribute("id", "mobile-sticky-header");
+						intersectingHeader.setAttribute('id', 'mobile-sticky-header');
 					} else {
-						entry.target.removeAttribute("id");
+						entry.target.removeAttribute('id');
 					}
-				})
+				});
 			},
 			{
 				rootMargin: '0px 0px -100% 0px',
@@ -63,6 +63,16 @@
 
 	#about > :global(p) {
 		margin: 8px 0;
+	}
+
+	#contact > :global(#hcaptcha-privacyterms) {
+		margin: 0 auto;
+		font-size: 0.8em;
+		color: var(--text-suppressed);
+	}
+
+	#contact > :global(#hcaptcha-privacyterms > a) {
+		text-decoration: underline;
 	}
 
 	@media screen and (max-width: 1100px) {

@@ -405,16 +405,6 @@
 		color: var(--header-heading);
 	}
 
-	#hcaptcha-privacyterms {
-		margin: 0 auto;
-		font-size: 0.8em;
-		color: var(--text-suppressed);
-	}
-
-	#hcaptcha-privacyterms a {
-		text-decoration: underline;
-	}
-
 	@media screen and (max-width: 1100px) {
 		div {
 			display: grid;
