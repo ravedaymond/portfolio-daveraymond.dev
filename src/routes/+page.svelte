@@ -220,10 +220,10 @@
 				<h2>{data.main.contact.header}</h2>
 			</hgroup>
 			<FormContact id="contact-form" hSize="h3" title={data.main.contact.form.title} />
-			<p>
+			<p id="hcaptcha-privacyterms">
 				This site is protected by hCaptcha and its
-				<a href="https://www.hcaptcha.com/privacy" style="text-decoration: underline;">Privacy Policy</a> and
-				<a href="https://www.hcaptcha.com/terms" style="text-decoration: underline;">Terms of Service</a> apply.
+				<a href="https://www.hcaptcha.com/privacy">Privacy Policy</a> and
+				<a href="https://www.hcaptcha.com/terms">Terms of Service</a> apply.
 			</p>
 		</Section>
 	</main>
@@ -403,6 +403,16 @@
 
 	main :global(a:hover) {
 		color: var(--header-heading);
+	}
+
+	#hcaptcha-privacyterms {
+		margin: 0 auto;
+		font-size: 0.8em;
+		color: var(--text-suppressed);
+	}
+
+	#hcaptcha-privacyterms a {
+		text-decoration: underline;
 	}
 
 	@media screen and (max-width: 1100px) {
