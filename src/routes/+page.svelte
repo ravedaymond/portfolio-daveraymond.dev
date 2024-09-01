@@ -111,7 +111,7 @@
 			contact: {
 				header: 'Contact',
 				form: {
-					title: 'Building cool things is <em>way</em> more fun together. Let\'s get in touch!'
+					title: "Building cool things is <em>way</em> more fun together. Let's get in touch!"
 				}
 			}
 		}
@@ -138,9 +138,9 @@
 				entries.forEach((entry: IntersectionObserverEntry) => {
 					if (entry.isIntersecting) {
 						navlinks.focused?.removeAttribute('id');
-						navlinks.focused = navlinks[entry.target.getAttribute('id') || "null"];
+						navlinks.focused = navlinks[entry.target.getAttribute('id') || 'null'];
 						navlinks.focused.setAttribute('id', 'nav-focus');
-						replaceState(navlinks.focused.parentNode.getAttribute("href"), {});
+						replaceState(navlinks.focused.parentNode.getAttribute('href'), {});
 					}
 				});
 			},
@@ -220,6 +220,11 @@
 				<h2>{data.main.contact.header}</h2>
 			</hgroup>
 			<FormContact id="contact-form" hSize="h3" title={data.main.contact.form.title} />
+			<p>
+				This site is protected by hCaptcha and its
+				<a href="https://www.hcaptcha.com/privacy" style="text-decoration: underline;">Privacy Policy</a> and
+				<a href="https://www.hcaptcha.com/terms" style="text-decoration: underline;">Terms of Service</a> apply.
+			</p>
 		</Section>
 	</main>
 	<Footer gridarea="footer" />

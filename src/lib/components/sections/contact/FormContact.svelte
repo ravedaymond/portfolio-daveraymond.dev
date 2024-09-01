@@ -36,8 +36,8 @@
 	></textarea>
 	<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 	<input type="hidden" name="redirect" value="https://web3forms.com/success" />
-	<div class="h-captcha" data-captcha="true"></div>
 	<input type="submit" value="Send Message" />
+	<div class="h-captcha" data-captcha="true"></div>
 </form>
 
 <style>
