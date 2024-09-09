@@ -210,11 +210,6 @@
 				{data.main.experience.more.text}
 			</SectionViewMore>
 		</Section>
-		<Section id={data.main.projects.header.toLowerCase()}>
-			<hgroup class="mobile-only" slot="hgroup">
-				<h2>{data.main.projects.header}</h2>
-			</hgroup>
-		</Section>
 		<Section id={data.main.contact.header.toLowerCase()}>
 			<hgroup class="sr-only" slot="hgroup">
 				<h2>{data.main.contact.header}</h2>
