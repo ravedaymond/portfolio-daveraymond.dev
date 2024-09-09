@@ -101,13 +101,6 @@
 					}
 				]
 			},
-			projects: {
-				header: 'Projects',
-				more: {
-					url: '/projects',
-					text: 'View all projects'
-				}
-			},
 			contact: {
 				header: 'Contact',
 				form: {
