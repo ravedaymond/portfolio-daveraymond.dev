@@ -79,6 +79,7 @@
 			grid-template-columns: auto;
 			grid-template-rows: auto;
 			margin-left: 0.5em;
+			z-index: 1;
 		}
 	}
 </style>
