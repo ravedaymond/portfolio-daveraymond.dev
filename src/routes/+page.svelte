@@ -58,7 +58,7 @@
 					{
 						end: 'Jul 2024',
 						start: 'Jun 2022',
-						title: 'Full Stack Engineer',
+						title: 'Software Engineer',
 						company: 'Fidelity Investments',
 						url: 'https://www.fidelity.com/',
 						list: [
