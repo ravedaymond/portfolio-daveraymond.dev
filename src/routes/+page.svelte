@@ -51,7 +51,7 @@
 			experience: {
 				header: 'Experience',
 				more: {
-					url: '/files/experience.pdf',
+					url: 'experience',
 					text: 'View all professional experience'
 				},
 				content: [
@@ -159,6 +159,10 @@
 			'margin-bottom',
 			'calc(100vh - ' + section?.clientHeight + 'px - 64px)'
 		);
+	}
+
+	function mainSubNavigation() {
+		console.log("success");
 	}
 </script>
 

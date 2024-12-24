@@ -1,9 +1,22 @@
 <script lang="ts">
 	export let href: string;
     export let target: `_blank` | `_parent` = "_blank";
+
+	export let callback: any = null;
+
+	function onclick(event) {
+		try {
+			callback();
+		} catch(e) {
+			if(e instanceof TypeError) {
+				console.debug("No callback function for SectionViewMore");
+			}
+		}
+	};
+
 </script>
 <div>
-	<a href={href} target={target}>
+	<a href={href} target={target} on:click={onclick} data-sveltekit-preload-data>
 		<slot></slot><span>&nbsp;&xrarr;</span>
 	</a>
 </div>
