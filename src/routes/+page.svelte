@@ -52,51 +52,73 @@
 				header: 'Experience',
 				more: {
 					url: 'experience',
-					text: 'View all professional experience'
+					text: 'View full professional experience'
 				},
 				content: [
 					{
-						end: 'Jul 2024',
-						start: 'Jun 2022',
+						end: '2024 Jul',
+						start: '2022 Jun',
+						title: 'Full Stack Engineer',
+						company: 'Fidelity Investments',
+						url: 'https://www.fidelity.com/',
+						list: [
+							'Developed new front-end SPA applications intended to standardize processes for security form filing with the SEC.',
+							'Worked with architecture teams to troubleshoot performance boƩlenecks and solutions for future revision.',
+							'Enhanced existing Angular client applications to improve client managing of employee equiƟes and benefits.',
+							'Collaborated with UI/UX leadership to improve end user experience and client workflow across applications.',
+							'Managed and created CI/CD pipelines alongside DevOps teams for new applications.'
+						]
+					},
+					{
+						start: '2019 Jan',
 						title: 'Software Engineer',
 						company: 'Fidelity Investments',
 						url: 'https://www.fidelity.com/',
 						list: [
-							'Created net-new Angular SPA to standardize data and process for all platform clients filing security forms with the SEC.',
-							'Added features to existing Angular client applications to improve client managing of employee equities and benefits.',
-							'Collaborated with UI/UX leadership teams to improve end user experience and client workflow for new applications.',
-							'Engaged with accessibility teams to ensure applications met or surpassed 508 accessibility standards'
+							'Developed scalable multi-threaded batch application to automate liquidation of expiring options.',
+							'Designed and developed rule engine to enable dynamic control of current and future automation.',
+							'Created shared libraries to standardize database integration across teams and applications.',
+							'Lead on Oracle modernization effort across Risk Management to standardize Oracle PL/SQL procedures.',
+							'Worked directly with business partners as Product Owner during company re-organization efforts.'
 						]
 					},
 					{
-						start: 'May 2019',
-						title: 'Software Engineer',
-						company: 'Fidelity Investments',
-						url: 'https://www.fidelity.com/',
-						list: [
-							'Developed scalable multi-threaded batch application to liquidate expiring options using Java and Spring Boot.',
-							'Designed and developed aggregate rule engine to enable dynamic control over current and future batch applications.',
-							'Created shared Java libraries to standardize Oracle database integration across applications.',
-							'Lead on Oracle modernization effort across Risk Management to standardize Oracle PL/SQL procedures.'
-						]
-					},
-					{
-						start: 'Jan 2019',
-						title: 'LEAP Associate Software Engineer',
-						company: 'Fidelity Investments',
-						url: 'https://jobs.fidelity.com/students/leap-program/',
-						list: [
-							'Improved UI/UX, refactored, and modernized internal social media messaging board application using Angular.',
-							'Developed back-end web APIs using Node.js and Spring Boot.',
-							'Worked with relational and non-relational database solutions such as Oracle, MySQL, and MongoDB.'
-						]
-					},
-					{
-						end: 'Dec 2018',
-						start: 'Jan 2014',
+						end: '2018 Dec',
 						title: 'Bachelor of Science, Information Technology',
 						company: 'Plymouth State University',
 						url: 'https://www.plymouth.edu/',
+						list: []
+					},
+					{
+						end: '2018 Nov',
+						start: '2016 Aug',
+						title: 'Support Technician',
+						company: 'Plymouth State University',
+						url: 'https://www.plymouth.edu/',
+						list: [
+							'Certified Dell and Apple device repair technician.',
+							'Updated, maintained, and responded to issues with lab hardware across the campus.',
+							'Improved inventory and storage system for University assets as well as repair shop tools and devices.',
+							'Repaired student and faculty devices across all major brands, including phones, tablets, laptops, and desktops.'
+						]
+					},
+					{
+						start: '2015 Mar',
+						title: 'Help Desk Technician',
+						company: 'PC Connection, Inc.',
+						url: 'https://www.connection.com/',
+						list: [
+							'Managed employee access via role-based and rule-based permissions.',
+							'Installed and maintained employee hardware including phones, tablets, computers, and peripherals.',
+							'Rewired telecommunication relays for cubicle work spaces.',
+							'Assisted with IT help desk support fielding calls, walk-ups, and creating necessary support tickets.'
+						]
+					},
+					{
+						start: '2014 Jan',
+						title: '',
+						company: '',
+						url: '',
 						list: []
 					}
 				]
@@ -162,7 +184,7 @@
 	}
 
 	function mainSubNavigation() {
-		console.log("success");
+		console.log('success');
 	}
 </script>
 
@@ -214,8 +236,17 @@
 			<FormContact id="contact-form" hSize="h3" title={data.main.contact.form.title} />
 			<p id="hcaptcha-privacyterms">
 				This site is protected by hCaptcha and its
-				<a href="https://www.hcaptcha.com/privacy" target="_blank" rel="external noopener noreferrer nofollow">Privacy Policy</a> and
-				<a href="https://www.hcaptcha.com/terms" target="_blank" rel="external noopener noreferrer nofollow">Terms of Service</a> apply.
+				<a
+					href="https://www.hcaptcha.com/privacy"
+					target="_blank"
+					rel="external noopener noreferrer nofollow">Privacy Policy</a
+				>
+				and
+				<a
+					href="https://www.hcaptcha.com/terms"
+					target="_blank"
+					rel="external noopener noreferrer nofollow">Terms of Service</a
+				> apply.
 			</p>
 		</Section>
 	</main>
