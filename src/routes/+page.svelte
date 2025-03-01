@@ -115,11 +115,7 @@
 						]
 					},
 					{
-						start: '2014 Jan',
-						title: '',
-						company: '',
-						url: '',
-						list: []
+						start: '2014 Jan'
 					}
 				]
 			},
