@@ -113,9 +113,6 @@
 							'Rewired telecommunication relays for cubicle work spaces.',
 							'Assisted with IT help desk support fielding calls, walk-ups, and creating necessary support tickets.'
 						]
-					},
-					{
-						start: '2014 Jan'
 					}
 				]
 			},
