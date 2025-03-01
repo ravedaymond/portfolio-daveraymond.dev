@@ -51,7 +51,7 @@
 			experience: {
 				header: 'Experience',
 				more: {
-					url: 'experience',
+					url: '/files/experience.pdf',
 					text: 'View full professional experience'
 				},
 				content: [
