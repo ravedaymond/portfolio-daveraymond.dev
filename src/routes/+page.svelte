@@ -63,10 +63,10 @@
 						url: 'https://www.fidelity.com/',
 						list: [
 							'Developed new front-end SPA applications intended to standardize processes for security form filing with the SEC.',
-							'Worked with architecture teams to troubleshoot performance boƩlenecks and solutions for future revision.',
-							'Enhanced existing Angular client applications to improve client managing of employee equiƟes and benefits.',
-							'Collaborated with UI/UX leadership to improve end user experience and client workflow across applications.',
-							'Managed and created CI/CD pipelines alongside DevOps teams for new applications.'
+							'Worked with architecture teams to troubleshoot performance bottlenecks and solutions for future revision.',
+							'Managed and created CI/CD pipelines alongside DevOps teams for new applications.',
+							'Enhanced existing Angular client applications to improve client managing of employee equities and benefits.',
+							'Collaborated with UI/UX leadership to improve end user experience and client workflow across applications.'
 						]
 					},
 					{
@@ -76,10 +76,10 @@
 						url: 'https://www.fidelity.com/',
 						list: [
 							'Developed scalable multi-threaded batch application to automate liquidation of expiring options.',
-							'Designed and developed rule engine to enable dynamic control of current and future automation.',
+							'Worked directly with business partners as Product Owner during company re-organization efforts.',
 							'Created shared libraries to standardize database integration across teams and applications.',
-							'Lead on Oracle modernization effort across Risk Management to standardize Oracle PL/SQL procedures.',
-							'Worked directly with business partners as Product Owner during company re-organization efforts.'
+							'Designed and developed rule engine to enable dynamic control of current and future automation.',
+							'Lead on Oracle modernization effort across Risk Management to standardize Oracle PL/SQL procedures.'
 						]
 					},
 					{
@@ -108,9 +108,9 @@
 						company: 'PC Connection, Inc.',
 						url: 'https://www.connection.com/',
 						list: [
-							'Managed employee access via role-based and rule-based permissions.',
+							'Created new technical documentation to standardize processes and improve efficiency.',
+							'Managed employee access via role-based and rule-based permission systems.',
 							'Installed and maintained employee hardware including phones, tablets, computers, and peripherals.',
-							'Rewired telecommunication relays for cubicle work spaces.',
 							'Assisted with IT help desk support fielding calls, walk-ups, and creating necessary support tickets.'
 						]
 					}
