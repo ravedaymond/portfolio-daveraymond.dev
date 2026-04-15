@@ -191,57 +191,10 @@
 	/>
 	<Header gridarea="headnav" {data} />
 	<main>
-		<Section id={data.main.about.header.toLowerCase()}>
-			<hgroup class="mobile-only" slot="hgroup">
-				<h2>{data.main.about.header}</h2>
-			</hgroup>
-			{#each data.main.about.content as p}
-				<p>{@html p}</p>
-			{/each}
-		</Section>
-		<Section id={data.main.experience.header.toLowerCase()}>
-			<hgroup class="mobile-only" slot="hgroup">
-				<h2>{data.main.experience.header}</h2>
-			</hgroup>
-			{#each data.main.experience.content as role}
-				{#if role.end}
-					<ExperienceTime value={role.end} />
-				{/if}
-				<ExperienceCard
-					hSize="h3"
-					title={role.title}
-					url={role.url}
-					company={role.company}
-					list={role.list}
-				/>
-				{#if role.start}
-					<ExperienceTime value={role.start} />
-				{/if}
-			{/each}
-			<SectionViewMore href={data.main.experience.more.url}>
-				{data.main.experience.more.text}
-			</SectionViewMore>
-		</Section>
-		<Section id={data.main.contact.header.toLowerCase()}>
-			<hgroup class="sr-only" slot="hgroup">
-				<h2>{data.main.contact.header}</h2>
-			</hgroup>
-			<FormContact id="contact-form" hSize="h3" title={data.main.contact.form.title} />
-			<p id="hcaptcha-privacyterms">
-				This site is protected by hCaptcha and its
-				<a
-					href="https://www.hcaptcha.com/privacy"
-					target="_blank"
-					rel="external noopener noreferrer nofollow">Privacy Policy</a
-				>
-				and
-				<a
-					href="https://www.hcaptcha.com/terms"
-					target="_blank"
-					rel="external noopener noreferrer nofollow">Terms of Service</a
-				> apply.
-			</p>
-		</Section>
+		<div id="maintenance">
+			<h1>Thank you for visiting!</h1>
+			<p>This website is currently down for maintenance.</p>
+		</div>
 	</main>
 	<Footer gridarea="footer" />
 </div>
