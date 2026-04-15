@@ -189,14 +189,12 @@
 		--gradient-center="var(--mouse-gradient-center)"
 		--gradient-edge="var(--page-background)"
 	/>
-	<Header gridarea="headnav" {data} />
 	<main>
 		<div id="maintenance">
 			<h1>Thank you for visiting!</h1>
 			<p>This website is currently down for maintenance.</p>
 		</div>
 	</main>
-	<Footer gridarea="footer" />
 </div>
 
 <style>
